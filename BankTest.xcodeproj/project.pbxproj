@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D74D8C15287A9E66006AB434 /* logout 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D74D8C13287A9E66006AB434 /* logout 2.png */; };
+		D74D8C16287A9E66006AB434 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D74D8C14287A9E66006AB434 /* Logo.png */; };
 		D7CE5F632877E29A00FA66AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F622877E29A00FA66AD /* AppDelegate.swift */; };
 		D7CE5F652877E29A00FA66AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F642877E29A00FA66AD /* SceneDelegate.swift */; };
 		D7CE5F6C2877E29E00FA66AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7CE5F6B2877E29E00FA66AD /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D74D8C13287A9E66006AB434 /* logout 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout 2.png"; sourceTree = "<group>"; };
+		D74D8C14287A9E66006AB434 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		D7CE5F5F2877E29A00FA66AD /* BankTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CE5F622877E29A00FA66AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7CE5F642877E29A00FA66AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D74D8C17287A9E9F006AB434 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D74D8C14287A9E66006AB434 /* Logo.png */,
+				D74D8C13287A9E66006AB434 /* logout 2.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		D7CE5F562877E29A00FA66AD = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 		D7CE5F612877E29A00FA66AD /* BankTest */ = {
 			isa = PBXGroup;
 			children = (
+				D74D8C17287A9E9F006AB434 /* Assets */,
 				D7CE5F622877E29A00FA66AD /* AppDelegate.swift */,
 				D7CE5F642877E29A00FA66AD /* SceneDelegate.swift */,
 				D7CE5F6B2877E29E00FA66AD /* Assets.xcassets */,
@@ -237,9 +251,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74D8C16287A9E66006AB434 /* Logo.png in Resources */,
 				D7CE5F9F2877EC6700FA66AD /* StatementsViewController.xib in Resources */,
 				D7CE5F6F2877E29E00FA66AD /* LaunchScreen.storyboard in Resources */,
 				D7CE5F6C2877E29E00FA66AD /* Assets.xcassets in Resources */,
+				D74D8C15287A9E66006AB434 /* logout 2.png in Resources */,
 				D7CE5F9B2877EB5100FA66AD /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
