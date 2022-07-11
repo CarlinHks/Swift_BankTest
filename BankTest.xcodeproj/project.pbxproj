@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AC3CD5A2B1A5A11563FA050 /* Pods_BankTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7B4D7866D07C4727B1DEF2 /* Pods_BankTest.framework */; };
 		D74D8C15287A9E66006AB434 /* logout 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D74D8C13287A9E66006AB434 /* logout 2.png */; };
 		D74D8C16287A9E66006AB434 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D74D8C14287A9E66006AB434 /* Logo.png */; };
 		D7CE5F632877E29A00FA66AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F622877E29A00FA66AD /* AppDelegate.swift */; };
@@ -41,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DE477F70140F5DEDB26DFC8 /* Pods-BankTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankTest.debug.xcconfig"; path = "Target Support Files/Pods-BankTest/Pods-BankTest.debug.xcconfig"; sourceTree = "<group>"; };
+		4B7B4D7866D07C4727B1DEF2 /* Pods_BankTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BankTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C430CB027B1580C0DEC6D5D /* Pods-BankTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankTest.release.xcconfig"; path = "Target Support Files/Pods-BankTest/Pods-BankTest.release.xcconfig"; sourceTree = "<group>"; };
 		D74D8C13287A9E66006AB434 /* logout 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout 2.png"; sourceTree = "<group>"; };
 		D74D8C14287A9E66006AB434 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		D7CE5F5F2877E29A00FA66AD /* BankTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AC3CD5A2B1A5A11563FA050 /* Pods_BankTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +91,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03123DFB92A0F8EEBA510CB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DE477F70140F5DEDB26DFC8 /* Pods-BankTest.debug.xcconfig */,
+				9C430CB027B1580C0DEC6D5D /* Pods-BankTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A128F80C41E9245D3137C0BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B7B4D7866D07C4727B1DEF2 /* Pods_BankTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D74D8C17287A9E9F006AB434 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +124,8 @@
 				D7CE5F782877E29E00FA66AD /* BankTestTests */,
 				D7CE5F822877E29E00FA66AD /* BankTestUITests */,
 				D7CE5F602877E29A00FA66AD /* Products */,
+				03123DFB92A0F8EEBA510CB5 /* Pods */,
+				A128F80C41E9245D3137C0BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,12 +144,12 @@
 			children = (
 				D7D26F17287B88F500F2EE08 /* Utils */,
 				D74D8C17287A9E9F006AB434 /* Assets */,
+				D7D26F16287B88CC00F2EE08 /* Login */,
 				D7CE5F622877E29A00FA66AD /* AppDelegate.swift */,
 				D7CE5F642877E29A00FA66AD /* SceneDelegate.swift */,
 				D7CE5F6B2877E29E00FA66AD /* Assets.xcassets */,
 				D7CE5F6D2877E29E00FA66AD /* LaunchScreen.storyboard */,
 				D7CE5F702877E29E00FA66AD /* Info.plist */,
-				D7D26F16287B88CC00F2EE08 /* Login */,
 				D7CE5F9C2877EC6700FA66AD /* StatementsViewController.swift */,
 				D7CE5F9D2877EC6700FA66AD /* StatementsViewController.xib */,
 			);
@@ -181,6 +205,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7CE5F892877E29E00FA66AD /* Build configuration list for PBXNativeTarget "BankTest" */;
 			buildPhases = (
+				60EB34802C66F10B7C52129C /* [CP] Check Pods Manifest.lock */,
+				D7F690F9287BE1D700A061B6 /* Run SwiftLint */,
 				D7CE5F5B2877E29A00FA66AD /* Sources */,
 				D7CE5F5C2877E29A00FA66AD /* Frameworks */,
 				D7CE5F5D2877E29A00FA66AD /* Resources */,
@@ -302,6 +328,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60EB34802C66F10B7C52129C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BankTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7F690F9287BE1D700A061B6 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D7CE5F5B2877E29A00FA66AD /* Sources */ = {
@@ -476,6 +545,7 @@
 		};
 		D7CE5F8A2877E29E00FA66AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DE477F70140F5DEDB26DFC8 /* Pods-BankTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -503,6 +573,7 @@
 		};
 		D7CE5F8B2877E29E00FA66AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C430CB027B1580C0DEC6D5D /* Pods-BankTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

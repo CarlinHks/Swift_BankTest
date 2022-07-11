@@ -34,13 +34,13 @@ class LoginViewController: UIViewController {
 //                return
 //            }
             
-            if !isValidUsername(username: username) {
+            if !username.isValidUsername() {
                 usernameText.layer.borderWidth = 1
                 
                 fail = true
             }
             
-            if !isValidPassword(password: password) {
+            if !password.isValidPassword() {
                 passwordText.layer.borderWidth = 1
                 
                 fail = true
@@ -53,13 +53,4 @@ class LoginViewController: UIViewController {
             navigationController?.pushViewController(StatementsViewController(), animated: true)
         }
     }
-    
-    func isValidUsername(username: String) -> Bool {
-        return username.isValidEmail() || username.isValidCPF()
-    }
-    
-    func isValidPassword(password: String) -> Bool {
-        return password.isValidPassword()
-    }
-
 }
