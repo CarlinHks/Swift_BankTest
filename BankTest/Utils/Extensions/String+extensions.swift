@@ -5,17 +5,18 @@
 //  Created by Carlos Pacheco on 10/07/22.
 //
 
+// swiftlint:disable identifier_name
 import Foundation
 
 extension String {
-    
+
     func isValidEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: self)
     }
-    
+
     func isValidCPF() -> Bool {
         let numbers = self.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
         guard numbers.count == 11 else { return false }
@@ -52,12 +53,12 @@ extension String {
     func isValidUsername() -> Bool {
         return self.isValidEmail() || self.isValidCPF()
     }
-    
+
     func isValidPassword() -> Bool {
         // Uppercase, Special, Number
         let passwdRegEx = "^(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#]).{3,}"
 
-        let passwdPred = NSPredicate(format:"SELF MATCHES %@", passwdRegEx)
+        let passwdPred = NSPredicate(format: "SELF MATCHES %@", passwdRegEx)
         return passwdPred.evaluate(with: self)
     }
 }
