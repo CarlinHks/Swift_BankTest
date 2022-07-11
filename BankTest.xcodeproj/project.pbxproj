@@ -20,6 +20,7 @@
 		D7CE5F9B2877EB5100FA66AD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE5F992877EB5100FA66AD /* LoginViewController.xib */; };
 		D7CE5F9E2877EC6700FA66AD /* StatementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F9C2877EC6700FA66AD /* StatementsViewController.swift */; };
 		D7CE5F9F2877EC6700FA66AD /* StatementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE5F9D2877EC6700FA66AD /* StatementsViewController.xib */; };
+		D7D26F1A287B895900F2EE08 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D26F19287B895900F2EE08 /* String+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D7CE5F992877EB5100FA66AD /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		D7CE5F9C2877EC6700FA66AD /* StatementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsViewController.swift; sourceTree = "<group>"; };
 		D7CE5F9D2877EC6700FA66AD /* StatementsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatementsViewController.xib; sourceTree = "<group>"; };
+		D7D26F19287B895900F2EE08 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,14 +118,14 @@
 		D7CE5F612877E29A00FA66AD /* BankTest */ = {
 			isa = PBXGroup;
 			children = (
+				D7D26F17287B88F500F2EE08 /* Utils */,
 				D74D8C17287A9E9F006AB434 /* Assets */,
 				D7CE5F622877E29A00FA66AD /* AppDelegate.swift */,
 				D7CE5F642877E29A00FA66AD /* SceneDelegate.swift */,
 				D7CE5F6B2877E29E00FA66AD /* Assets.xcassets */,
 				D7CE5F6D2877E29E00FA66AD /* LaunchScreen.storyboard */,
 				D7CE5F702877E29E00FA66AD /* Info.plist */,
-				D7CE5F982877EB5100FA66AD /* LoginViewController.swift */,
-				D7CE5F992877EB5100FA66AD /* LoginViewController.xib */,
+				D7D26F16287B88CC00F2EE08 /* Login */,
 				D7CE5F9C2877EC6700FA66AD /* StatementsViewController.swift */,
 				D7CE5F9D2877EC6700FA66AD /* StatementsViewController.xib */,
 			);
@@ -145,6 +147,31 @@
 				D7CE5F852877E29E00FA66AD /* BankTestUITestsLaunchTests.swift */,
 			);
 			path = BankTestUITests;
+			sourceTree = "<group>";
+		};
+		D7D26F16287B88CC00F2EE08 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D7CE5F982877EB5100FA66AD /* LoginViewController.swift */,
+				D7CE5F992877EB5100FA66AD /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D7D26F17287B88F500F2EE08 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D7D26F18287B892F00F2EE08 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D7D26F18287B892F00F2EE08 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D7D26F19287B895900F2EE08 /* String+extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +312,7 @@
 				D7CE5F9A2877EB5100FA66AD /* LoginViewController.swift in Sources */,
 				D7CE5F632877E29A00FA66AD /* AppDelegate.swift in Sources */,
 				D7CE5F652877E29A00FA66AD /* SceneDelegate.swift in Sources */,
+				D7D26F1A287B895900F2EE08 /* String+extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

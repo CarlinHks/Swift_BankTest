@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="BankTest" customModuleProvider="target">
             <connections>
+                <outlet property="passwordText" destination="8Cf-Dg-zJV" id="f0F-iM-fOH"/>
+                <outlet property="usernameText" destination="DFJ-m7-3hZ" id="b9e-nK-3jJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
