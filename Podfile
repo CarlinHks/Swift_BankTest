@@ -7,5 +7,6 @@ target 'BankTest' do
 
   # Pods for BankTest
   pod 'SwiftLint'
-
+  pod 'Moya'
+  
 end

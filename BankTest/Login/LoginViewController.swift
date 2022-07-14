@@ -11,14 +11,33 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    var loginViewModel: LoginViewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-
+        self.initializeElements()
+        self.initializeViewModels()
+    }
+    
+    func initializeElements() {
         usernameText.layer.borderColor = UIColor.red.cgColor
         passwordText.layer.borderColor = UIColor.red.cgColor
+    }
+    
+    func initializeViewModels() {
+        self.initializeCustomerViewModel()
+    }
+    
+    func initializeCustomerViewModel() {
+        loginViewModel.custormer.bind { [weak self] _ in
+            guard let self = self else { return }
+            
+            if let customer = self.loginViewModel.custormer.value {
+                print(customer.id)
+                self.navigationController?.pushViewController(StatementsViewController(), animated: true)
+            }
+        }
     }
 
     @IBAction func loginButton(_ sender: Any) {
@@ -50,7 +69,7 @@ class LoginViewController: UIViewController {
                 return
             }
 
-            navigationController?.pushViewController(StatementsViewController(), animated: true)
+            loginViewModel.authenticate(username: username, password: password)
         }
     }
 }
