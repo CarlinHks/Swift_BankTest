@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,6 +12,7 @@
             <connections>
                 <outlet property="contaLabel" destination="ZH5-wx-4X1" id="ynK-2v-qwj"/>
                 <outlet property="nameLabel" destination="sqG-3g-FdX" id="IE7-bG-OZl"/>
+                <outlet property="paymentsTable" destination="O6O-Qg-PT6" id="262-2t-8MB"/>
                 <outlet property="saldoLabel" destination="mHY-NO-1Fk" id="h4k-Ef-Tw8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,26 +22,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tSi-yV-ANG">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tSi-yV-ANG">
                     <rect key="frame" x="20" y="44" width="374" height="254.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqG-3g-FdX">
-                            <rect key="frame" x="0.0" y="0.0" width="211" height="71.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="211" height="85"/>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kgQ-Xb-KlL">
-                            <rect key="frame" x="0.0" y="91.5" width="169" height="71.5"/>
+                            <rect key="frame" x="0.0" y="85" width="169" height="85"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDV-Ut-8bO">
-                                    <rect key="frame" x="0.0" y="0.0" width="46" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="46" height="42.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH5-wx-4X1">
-                                    <rect key="frame" x="0.0" y="36" width="169" height="35.5"/>
+                                    <rect key="frame" x="0.0" y="42.5" width="169" height="42.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -47,16 +49,16 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="mz3-Y5-5eI">
-                            <rect key="frame" x="0.0" y="183" width="164" height="71.5"/>
+                            <rect key="frame" x="0.0" y="170" width="164" height="84.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIj-J8-Sfj">
-                                    <rect key="frame" x="0.0" y="0.0" width="43" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="43" height="42"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-NO-1Fk">
-                                    <rect key="frame" x="0.0" y="36" width="164" height="35.5"/>
+                                    <rect key="frame" x="0.0" y="42" width="164" height="42.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -64,17 +66,31 @@
                             </subviews>
                         </stackView>
                     </subviews>
+                    <color key="backgroundColor" red="0.2666666667" green="0.32156862749999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="O6O-Qg-PT6">
+                    <rect key="frame" x="0.0" y="298.5" width="414" height="563.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.26666666666666666" green="0.32156862745098036" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="O6O-Qg-PT6" secondAttribute="bottom" id="2TL-t6-Z2J"/>
                 <constraint firstItem="tSi-yV-ANG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5uk-eK-0ya"/>
+                <constraint firstItem="O6O-Qg-PT6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FR6-aU-dk1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O6O-Qg-PT6" secondAttribute="trailing" id="LVj-0E-58y"/>
                 <constraint firstAttribute="bottom" secondItem="tSi-yV-ANG" secondAttribute="bottom" multiplier="3" id="QHd-oL-mwj"/>
+                <constraint firstItem="O6O-Qg-PT6" firstAttribute="top" secondItem="tSi-yV-ANG" secondAttribute="bottom" id="WF2-MR-0eY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tSi-yV-ANG" secondAttribute="trailing" constant="20" id="dpB-Aj-g4o"/>
                 <constraint firstItem="tSi-yV-ANG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jKr-B4-8ZM"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="50.892857142857139"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

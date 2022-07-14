@@ -26,6 +26,8 @@
 		D7E61F27287E082400BDCF12 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F26287E082400BDCF12 /* LoginViewModel.swift */; };
 		D7E61F2A287E1B9600BDCF12 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F29287E1B9600BDCF12 /* NetworkServices.swift */; };
 		D7E61F2D287E83AB00BDCF12 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F2C287E83AB00BDCF12 /* Observable.swift */; };
+		D7FB9BCA287FEAC600147C1F /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB9BC9287FEAC600147C1F /* Payment.swift */; };
+		D7FB9BCC287FEB8B00147C1F /* PaymentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB9BCB287FEB8B00147C1F /* PaymentsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		D7E61F26287E082400BDCF12 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D7E61F29287E1B9600BDCF12 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
 		D7E61F2C287E83AB00BDCF12 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		D7FB9BC9287FEAC600147C1F /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		D7FB9BCB287FEB8B00147C1F /* PaymentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +242,7 @@
 			children = (
 				D7CE5F9C2877EC6700FA66AD /* PaymentsViewController.swift */,
 				D7CE5F9D2877EC6700FA66AD /* PaymentsViewController.xib */,
+				D7FB9BCB287FEB8B00147C1F /* PaymentsViewModel.swift */,
 			);
 			path = Payments;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				D7E61F24287E053A00BDCF12 /* CustomerModel.swift */,
+				D7FB9BC9287FEAC600147C1F /* Payment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -449,8 +455,10 @@
 			files = (
 				D7CE5F9E2877EC6700FA66AD /* PaymentsViewController.swift in Sources */,
 				D7E61F25287E053A00BDCF12 /* CustomerModel.swift in Sources */,
+				D7FB9BCC287FEB8B00147C1F /* PaymentsViewModel.swift in Sources */,
 				D7CE5F9A2877EB5100FA66AD /* LoginViewController.swift in Sources */,
 				D7CE5F632877E29A00FA66AD /* AppDelegate.swift in Sources */,
+				D7FB9BCA287FEAC600147C1F /* Payment.swift in Sources */,
 				D7E61F2D287E83AB00BDCF12 /* Observable.swift in Sources */,
 				D7CE5F652877E29A00FA66AD /* SceneDelegate.swift in Sources */,
 				D7D26F1A287B895900F2EE08 /* String+extensions.swift in Sources */,

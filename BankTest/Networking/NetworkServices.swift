@@ -23,8 +23,8 @@ extension NetworkServices: TargetType {
         switch self {
         case .login(_, _):
             return "/Login"
-        case .payments(let id):
-            return "/Payments/\(id)"
+        case .payments:
+            return "/payments"
         }
     }
 
@@ -40,7 +40,7 @@ extension NetworkServices: TargetType {
         case .login(let username, let password):
             return .requestParameters(parameters: ["username": username, "password": password], encoding: URLEncoding.queryString)
         case .payments(let id):
-            return .requestParameters(parameters: ["id": id], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["userId": id], encoding: URLEncoding.queryString)
         }
     }
 
