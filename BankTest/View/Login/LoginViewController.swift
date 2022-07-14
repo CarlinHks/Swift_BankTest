@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
             
             if let customer = self.loginViewModel.custormer.value {
                 print(customer.id)
-                self.navigationController?.pushViewController(StatementsViewController(), animated: true)
+                self.navigationController?.pushViewController(PaymentsViewController(customer: customer), animated: true)
             }
         }
     }
