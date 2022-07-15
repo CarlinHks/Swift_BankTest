@@ -13,6 +13,7 @@ struct Payment {
     var electricityBill: String
 }
 
+// MARK: Decodable extension
 extension Payment: Decodable {
     
 }

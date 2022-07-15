@@ -244,8 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				D7502EC028811F260070D972 /* Model */,
-				D7502EBF28811F1C0070D972 /* ViewModel */,
 				D7502EBE28811F150070D972 /* View */,
+				D7502EBF28811F1C0070D972 /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -295,9 +295,9 @@
 		D7FB9BC7287FCF7E00147C1F /* Payments */ = {
 			isa = PBXGroup;
 			children = (
-				D7502EBD28811EF50070D972 /* ViewModel */,
 				D7502EBC28811EEA0070D972 /* Model */,
 				D7502EBB28811EE40070D972 /* View */,
+				D7502EBD28811EF50070D972 /* ViewModel */,
 			);
 			path = Payments;
 			sourceTree = "<group>";

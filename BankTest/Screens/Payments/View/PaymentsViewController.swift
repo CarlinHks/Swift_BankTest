@@ -80,7 +80,7 @@ class PaymentsViewController: UIViewController {
     }
 }
 
-// MARK: TableView
+// MARK: TableView DataSource
 extension PaymentsViewController: UITableViewDataSource {
     func initializeTableView() {
         paymentsTable.dataSource = self
@@ -109,6 +109,7 @@ extension PaymentsViewController: UITableViewDataSource {
     }
 }
 
+// MARK: TableView Delegate
 extension PaymentsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80

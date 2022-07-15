@@ -15,6 +15,7 @@ struct Customer {
     var checkingAccountBalance: Int
 }
 
+// MARK: Decodable extension
 extension Customer: Decodable {
     
 }
