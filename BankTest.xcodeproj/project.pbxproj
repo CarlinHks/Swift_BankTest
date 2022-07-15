@@ -24,7 +24,7 @@
 		D7CE5F9E2877EC6700FA66AD /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F9C2877EC6700FA66AD /* PaymentsViewController.swift */; };
 		D7CE5F9F2877EC6700FA66AD /* PaymentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE5F9D2877EC6700FA66AD /* PaymentsViewController.xib */; };
 		D7D26F1A287B895900F2EE08 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D26F19287B895900F2EE08 /* String+extensions.swift */; };
-		D7E61F25287E053A00BDCF12 /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F24287E053A00BDCF12 /* CustomerModel.swift */; };
+		D7E61F25287E053A00BDCF12 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F24287E053A00BDCF12 /* Customer.swift */; };
 		D7E61F27287E082400BDCF12 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F26287E082400BDCF12 /* LoginViewModel.swift */; };
 		D7E61F2A287E1B9600BDCF12 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F29287E1B9600BDCF12 /* NetworkServices.swift */; };
 		D7E61F2D287E83AB00BDCF12 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F2C287E83AB00BDCF12 /* Observable.swift */; };
@@ -73,7 +73,7 @@
 		D7CE5F9C2877EC6700FA66AD /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
 		D7CE5F9D2877EC6700FA66AD /* PaymentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentsViewController.xib; sourceTree = "<group>"; };
 		D7D26F19287B895900F2EE08 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
-		D7E61F24287E053A00BDCF12 /* CustomerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
+		D7E61F24287E053A00BDCF12 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		D7E61F26287E082400BDCF12 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D7E61F29287E1B9600BDCF12 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
 		D7E61F2C287E83AB00BDCF12 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		D7FB9BC8287FD0A800147C1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D7E61F24287E053A00BDCF12 /* CustomerModel.swift */,
+				D7E61F24287E053A00BDCF12 /* Customer.swift */,
 				D7FB9BC9287FEAC600147C1F /* Payment.swift */,
 			);
 			path = Models;
@@ -461,7 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7CE5F9E2877EC6700FA66AD /* PaymentsViewController.swift in Sources */,
-				D7E61F25287E053A00BDCF12 /* CustomerModel.swift in Sources */,
+				D7E61F25287E053A00BDCF12 /* Customer.swift in Sources */,
 				D7FB9BCC287FEB8B00147C1F /* PaymentsViewModel.swift in Sources */,
 				D7CE5F9A2877EB5100FA66AD /* LoginViewController.swift in Sources */,
 				D7CE5F632877E29A00FA66AD /* AppDelegate.swift in Sources */,

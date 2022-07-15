@@ -84,6 +84,7 @@ class PaymentsViewController: UIViewController {
 extension PaymentsViewController: UITableViewDataSource {
     func initializeTableView() {
         paymentsTable.dataSource = self
+        paymentsTable.delegate = self
         paymentsTable.register(UINib(nibName: "PaymentCell", bundle: nil), forCellReuseIdentifier: "PaymentCell")
     }
     
@@ -105,5 +106,11 @@ extension PaymentsViewController: UITableViewDataSource {
         }
         
         return UITableViewCell()
+    }
+}
+
+extension PaymentsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }

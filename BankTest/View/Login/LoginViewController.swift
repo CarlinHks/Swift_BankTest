@@ -34,8 +34,9 @@ class LoginViewController: UIViewController {
             guard let self = self else { return }
             
             if let customer = self.loginViewModel.custormer.value {
-                print(customer.id)
-                self.navigationController?.pushViewController(PaymentsViewController(customer: customer), animated: true)
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(PaymentsViewController(customer: customer), animated: true)
+                }
             }
         }
     }
