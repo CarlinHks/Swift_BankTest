@@ -34,15 +34,11 @@ class PaymentsViewController: UIViewController {
         
         setNavigationBar()
         updateCustomerData()
-        initializeViewModels()
-        initializeTableDataSource()
+        initializeViewModel()
+        initializeTableView()
     }
     
-    func initializeViewModels() {
-        initializePaymentViewModel()
-    }
-    
-    func initializePaymentViewModel() {
+    func initializeViewModel() {
         paymentsViewModel.payments.bind { [weak self] _ in
             guard let self = self else { return }
             
@@ -84,9 +80,15 @@ class PaymentsViewController: UIViewController {
     }
 }
 
+// MARK: TableView
 extension PaymentsViewController: UITableViewDataSource {
-    func initializeTableDataSource() {
+    func initializeTableView() {
         paymentsTable.dataSource = self
+        paymentsTable.register(UINib(nibName: "PaymentCell", bundle: nil), forCellReuseIdentifier: "PaymentCell")
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Recentes"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,8 +96,14 @@ extension PaymentsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell", for: indexPath) as? PaymentCell {
+            if let payment = paymentsViewModel.payments.value?[indexPath.row] {
+                cell.dateLabel.text = payment.paymentDate
+            }
+            
+            return cell
+        }
         
-        return cell
+        return UITableViewCell()
     }
 }

@@ -68,6 +68,10 @@
                     </subviews>
                     <color key="backgroundColor" red="0.2666666667" green="0.32156862749999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Uc-eZ-zrX">
+                    <rect key="frame" x="0.0" y="298.5" width="414" height="597.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="O6O-Qg-PT6">
                     <rect key="frame" x="0.0" y="298.5" width="414" height="563.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,9 +85,13 @@
                 <constraint firstItem="O6O-Qg-PT6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FR6-aU-dk1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O6O-Qg-PT6" secondAttribute="trailing" id="LVj-0E-58y"/>
                 <constraint firstAttribute="bottom" secondItem="tSi-yV-ANG" secondAttribute="bottom" multiplier="3" id="QHd-oL-mwj"/>
+                <constraint firstItem="8Uc-eZ-zrX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="USK-YG-Kl2"/>
                 <constraint firstItem="O6O-Qg-PT6" firstAttribute="top" secondItem="tSi-yV-ANG" secondAttribute="bottom" id="WF2-MR-0eY"/>
+                <constraint firstItem="8Uc-eZ-zrX" firstAttribute="top" secondItem="tSi-yV-ANG" secondAttribute="bottom" id="dF4-X6-gdw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tSi-yV-ANG" secondAttribute="trailing" constant="20" id="dpB-Aj-g4o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8Uc-eZ-zrX" secondAttribute="trailing" id="i5j-3D-5ME"/>
                 <constraint firstItem="tSi-yV-ANG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jKr-B4-8ZM"/>
+                <constraint firstAttribute="bottom" secondItem="8Uc-eZ-zrX" secondAttribute="bottom" id="xL1-HT-7dw"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="50.892857142857139"/>
         </view>

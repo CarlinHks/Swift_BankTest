@@ -22,7 +22,7 @@ class PaymentsViewModel {
                 
                 do {
                     let payments = try decoder.decode([Payment].self, from: data)
-                    print(payments)
+                    self.payments.value = payments
                 } catch {
                     print(error)
                 }

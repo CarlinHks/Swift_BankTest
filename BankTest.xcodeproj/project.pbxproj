@@ -10,6 +10,8 @@
 		6AC3CD5A2B1A5A11563FA050 /* Pods_BankTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7B4D7866D07C4727B1DEF2 /* Pods_BankTest.framework */; };
 		D74D8C15287A9E66006AB434 /* logout 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D74D8C13287A9E66006AB434 /* logout 2.png */; };
 		D74D8C16287A9E66006AB434 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D74D8C14287A9E66006AB434 /* Logo.png */; };
+		D7502EB92881040B0070D972 /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7502EB72881040B0070D972 /* PaymentCell.swift */; };
+		D7502EBA2881040B0070D972 /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7502EB82881040B0070D972 /* PaymentCell.xib */; };
 		D7CE5F632877E29A00FA66AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F622877E29A00FA66AD /* AppDelegate.swift */; };
 		D7CE5F652877E29A00FA66AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F642877E29A00FA66AD /* SceneDelegate.swift */; };
 		D7CE5F6C2877E29E00FA66AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7CE5F6B2877E29E00FA66AD /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		9C430CB027B1580C0DEC6D5D /* Pods-BankTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankTest.release.xcconfig"; path = "Target Support Files/Pods-BankTest/Pods-BankTest.release.xcconfig"; sourceTree = "<group>"; };
 		D74D8C13287A9E66006AB434 /* logout 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout 2.png"; sourceTree = "<group>"; };
 		D74D8C14287A9E66006AB434 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		D7502EB72881040B0070D972 /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		D7502EB82881040B0070D972 /* PaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
 		D7CE5F5F2877E29A00FA66AD /* BankTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CE5F622877E29A00FA66AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7CE5F642877E29A00FA66AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 				D7CE5F9C2877EC6700FA66AD /* PaymentsViewController.swift */,
 				D7CE5F9D2877EC6700FA66AD /* PaymentsViewController.xib */,
 				D7FB9BCB287FEB8B00147C1F /* PaymentsViewModel.swift */,
+				D7502EB72881040B0070D972 /* PaymentCell.swift */,
+				D7502EB82881040B0070D972 /* PaymentCell.xib */,
 			);
 			path = Payments;
 			sourceTree = "<group>";
@@ -364,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D74D8C16287A9E66006AB434 /* Logo.png in Resources */,
+				D7502EBA2881040B0070D972 /* PaymentCell.xib in Resources */,
 				D7CE5F9F2877EC6700FA66AD /* PaymentsViewController.xib in Resources */,
 				D7CE5F6F2877E29E00FA66AD /* LaunchScreen.storyboard in Resources */,
 				D7CE5F6C2877E29E00FA66AD /* Assets.xcassets in Resources */,
@@ -459,6 +466,7 @@
 				D7CE5F9A2877EB5100FA66AD /* LoginViewController.swift in Sources */,
 				D7CE5F632877E29A00FA66AD /* AppDelegate.swift in Sources */,
 				D7FB9BCA287FEAC600147C1F /* Payment.swift in Sources */,
+				D7502EB92881040B0070D972 /* PaymentCell.swift in Sources */,
 				D7E61F2D287E83AB00BDCF12 /* Observable.swift in Sources */,
 				D7CE5F652877E29A00FA66AD /* SceneDelegate.swift in Sources */,
 				D7D26F1A287B895900F2EE08 /* String+extensions.swift in Sources */,
