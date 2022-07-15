@@ -11,6 +11,8 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    
     var loginViewModel = LoginViewModel()
 
     override func viewDidLoad() {
@@ -33,8 +35,10 @@ class LoginViewController: UIViewController {
         loginViewModel.custormer.bind { [weak self] _ in
             guard let self = self else { return }
             
-            if let customer = self.loginViewModel.custormer.value {
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                self.loginButton.isEnabled = true
+                
+                if let customer = self.loginViewModel.custormer.value {
                     self.navigationController?.pushViewController(PaymentsViewController(customer: customer), animated: true)
                 }
             }
@@ -70,6 +74,8 @@ class LoginViewController: UIViewController {
                 return
             }
 
+            loginButton.isEnabled = false
+            
             loginViewModel.authenticate(username: username, password: password)
         }
     }
