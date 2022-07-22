@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Payment {
+struct PaymentModel {
     var id: String
     var paymentDate: String
     var electricityBill: String
 }
 
 // MARK: Decodable extension
-extension Payment: Decodable {
+extension PaymentModel: Decodable {
     
 }

@@ -12,6 +12,8 @@
 		D74D8C16287A9E66006AB434 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D74D8C14287A9E66006AB434 /* Logo.png */; };
 		D7502EB92881040B0070D972 /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7502EB72881040B0070D972 /* PaymentCell.swift */; };
 		D7502EBA2881040B0070D972 /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7502EB82881040B0070D972 /* PaymentCell.xib */; };
+		D7BEDCF428890610008A35A2 /* External.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEDCF328890610008A35A2 /* External.swift */; };
+		D7BEDCF6288907DA008A35A2 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEDCF5288907DA008A35A2 /* UIViewController+extensions.swift */; };
 		D7CE5F632877E29A00FA66AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F622877E29A00FA66AD /* AppDelegate.swift */; };
 		D7CE5F652877E29A00FA66AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F642877E29A00FA66AD /* SceneDelegate.swift */; };
 		D7CE5F6C2877E29E00FA66AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7CE5F6B2877E29E00FA66AD /* Assets.xcassets */; };
@@ -24,11 +26,11 @@
 		D7CE5F9E2877EC6700FA66AD /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F9C2877EC6700FA66AD /* PaymentsViewController.swift */; };
 		D7CE5F9F2877EC6700FA66AD /* PaymentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE5F9D2877EC6700FA66AD /* PaymentsViewController.xib */; };
 		D7D26F1A287B895900F2EE08 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D26F19287B895900F2EE08 /* String+extensions.swift */; };
-		D7E61F25287E053A00BDCF12 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F24287E053A00BDCF12 /* Customer.swift */; };
+		D7E61F25287E053A00BDCF12 /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F24287E053A00BDCF12 /* CustomerModel.swift */; };
 		D7E61F27287E082400BDCF12 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F26287E082400BDCF12 /* LoginViewModel.swift */; };
-		D7E61F2A287E1B9600BDCF12 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F29287E1B9600BDCF12 /* NetworkServices.swift */; };
+		D7E61F2A287E1B9600BDCF12 /* MoyaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F29287E1B9600BDCF12 /* MoyaService.swift */; };
 		D7E61F2D287E83AB00BDCF12 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F2C287E83AB00BDCF12 /* Observable.swift */; };
-		D7FB9BCA287FEAC600147C1F /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB9BC9287FEAC600147C1F /* Payment.swift */; };
+		D7FB9BCA287FEAC600147C1F /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB9BC9287FEAC600147C1F /* PaymentModel.swift */; };
 		D7FB9BCC287FEB8B00147C1F /* PaymentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB9BCB287FEB8B00147C1F /* PaymentsViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		D74D8C14287A9E66006AB434 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		D7502EB72881040B0070D972 /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
 		D7502EB82881040B0070D972 /* PaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
+		D7BEDCF328890610008A35A2 /* External.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = External.swift; sourceTree = "<group>"; };
+		D7BEDCF5288907DA008A35A2 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		D7CE5F5F2877E29A00FA66AD /* BankTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CE5F622877E29A00FA66AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7CE5F642877E29A00FA66AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,11 +77,11 @@
 		D7CE5F9C2877EC6700FA66AD /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
 		D7CE5F9D2877EC6700FA66AD /* PaymentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentsViewController.xib; sourceTree = "<group>"; };
 		D7D26F19287B895900F2EE08 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
-		D7E61F24287E053A00BDCF12 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		D7E61F24287E053A00BDCF12 /* CustomerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
 		D7E61F26287E082400BDCF12 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		D7E61F29287E1B9600BDCF12 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
+		D7E61F29287E1B9600BDCF12 /* MoyaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaService.swift; sourceTree = "<group>"; };
 		D7E61F2C287E83AB00BDCF12 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		D7FB9BC9287FEAC600147C1F /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		D7FB9BC9287FEAC600147C1F /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		D7FB9BCB287FEB8B00147C1F /* PaymentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,10 +140,9 @@
 		D7502EBB28811EE40070D972 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D7BEDCF728891617008A35A2 /* Cell */,
 				D7CE5F9C2877EC6700FA66AD /* PaymentsViewController.swift */,
 				D7CE5F9D2877EC6700FA66AD /* PaymentsViewController.xib */,
-				D7502EB72881040B0070D972 /* PaymentCell.swift */,
-				D7502EB82881040B0070D972 /* PaymentCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,7 +150,7 @@
 		D7502EBC28811EEA0070D972 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D7FB9BC9287FEAC600147C1F /* Payment.swift */,
+				D7FB9BC9287FEAC600147C1F /* PaymentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,9 +183,26 @@
 		D7502EC028811F260070D972 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D7E61F24287E053A00BDCF12 /* Customer.swift */,
+				D7E61F24287E053A00BDCF12 /* CustomerModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D7BEDCF2288905CA008A35A2 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D7BEDCF328890610008A35A2 /* External.swift */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		D7BEDCF728891617008A35A2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D7502EB72881040B0070D972 /* PaymentCell.swift */,
+				D7502EB82881040B0070D972 /* PaymentCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D7CE5F562877E29A00FA66AD = {
@@ -210,6 +230,7 @@
 		D7CE5F612877E29A00FA66AD /* BankTest */ = {
 			isa = PBXGroup;
 			children = (
+				D7BEDCF2288905CA008A35A2 /* External */,
 				D7FB9BC6287FCF7400147C1F /* Screens */,
 				D7E61F28287E1ABE00BDCF12 /* Networking */,
 				D7D26F17287B88F500F2EE08 /* Utils */,
@@ -262,6 +283,7 @@
 		D7D26F18287B892F00F2EE08 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D7BEDCF5288907DA008A35A2 /* UIViewController+extensions.swift */,
 				D7D26F19287B895900F2EE08 /* String+extensions.swift */,
 			);
 			path = Extensions;
@@ -270,7 +292,7 @@
 		D7E61F28287E1ABE00BDCF12 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				D7E61F29287E1B9600BDCF12 /* NetworkServices.swift */,
+				D7E61F29287E1B9600BDCF12 /* MoyaService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -501,16 +523,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7CE5F9E2877EC6700FA66AD /* PaymentsViewController.swift in Sources */,
-				D7E61F25287E053A00BDCF12 /* Customer.swift in Sources */,
+				D7E61F25287E053A00BDCF12 /* CustomerModel.swift in Sources */,
 				D7FB9BCC287FEB8B00147C1F /* PaymentsViewModel.swift in Sources */,
 				D7CE5F9A2877EB5100FA66AD /* LoginViewController.swift in Sources */,
 				D7CE5F632877E29A00FA66AD /* AppDelegate.swift in Sources */,
-				D7FB9BCA287FEAC600147C1F /* Payment.swift in Sources */,
+				D7FB9BCA287FEAC600147C1F /* PaymentModel.swift in Sources */,
+				D7BEDCF6288907DA008A35A2 /* UIViewController+extensions.swift in Sources */,
 				D7502EB92881040B0070D972 /* PaymentCell.swift in Sources */,
 				D7E61F2D287E83AB00BDCF12 /* Observable.swift in Sources */,
 				D7CE5F652877E29A00FA66AD /* SceneDelegate.swift in Sources */,
+				D7BEDCF428890610008A35A2 /* External.swift in Sources */,
 				D7D26F1A287B895900F2EE08 /* String+extensions.swift in Sources */,
-				D7E61F2A287E1B9600BDCF12 /* NetworkServices.swift in Sources */,
+				D7E61F2A287E1B9600BDCF12 /* MoyaService.swift in Sources */,
 				D7E61F27287E082400BDCF12 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

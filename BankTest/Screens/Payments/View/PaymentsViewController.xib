@@ -10,10 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentsViewController" customModule="BankTest" customModuleProvider="target">
             <connections>
-                <outlet property="contaLabel" destination="ZH5-wx-4X1" id="ynK-2v-qwj"/>
+                <outlet property="accountLabel" destination="ZH5-wx-4X1" id="ynK-2v-qwj"/>
+                <outlet property="balanceLabel" destination="mHY-NO-1Fk" id="h4k-Ef-Tw8"/>
                 <outlet property="nameLabel" destination="sqG-3g-FdX" id="IE7-bG-OZl"/>
-                <outlet property="paymentsTable" destination="O6O-Qg-PT6" id="262-2t-8MB"/>
-                <outlet property="saldoLabel" destination="mHY-NO-1Fk" id="h4k-Ef-Tw8"/>
+                <outlet property="paymentsTableView" destination="O6O-Qg-PT6" id="262-2t-8MB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,76 +22,83 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tSi-yV-ANG">
-                    <rect key="frame" x="20" y="44" width="374" height="254.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O56-l5-sPL">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqG-3g-FdX">
-                            <rect key="frame" x="0.0" y="0.0" width="211" height="85"/>
+                            <rect key="frame" x="20" y="50" width="211" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="OVi-pf-shi"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kgQ-Xb-KlL">
-                            <rect key="frame" x="0.0" y="85" width="169" height="85"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HNk-v1-Obr">
+                            <rect key="frame" x="20" y="116" width="374" height="134"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDV-Ut-8bO">
-                                    <rect key="frame" x="0.0" y="0.0" width="46" height="42.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH5-wx-4X1">
-                                    <rect key="frame" x="0.0" y="42.5" width="169" height="42.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="mz3-Y5-5eI">
-                            <rect key="frame" x="0.0" y="170" width="164" height="84.5"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIj-J8-Sfj">
-                                    <rect key="frame" x="0.0" y="0.0" width="43" height="42"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-NO-1Fk">
-                                    <rect key="frame" x="0.0" y="42" width="164" height="42.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kgQ-Xb-KlL">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="67"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDV-Ut-8bO">
+                                            <rect key="frame" x="0.0" y="0.0" width="46" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH5-wx-4X1">
+                                            <rect key="frame" x="0.0" y="33.5" width="169" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="mz3-Y5-5eI">
+                                    <rect key="frame" x="0.0" y="67" width="374" height="67"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIj-J8-Sfj">
+                                            <rect key="frame" x="0.0" y="0.0" width="43" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-NO-1Fk">
+                                            <rect key="frame" x="0.0" y="33.5" width="164" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" red="0.2666666667" green="0.32156862749999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </stackView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Uc-eZ-zrX">
-                    <rect key="frame" x="0.0" y="298.5" width="414" height="597.5"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="HNk-v1-Obr" firstAttribute="leading" secondItem="O56-l5-sPL" secondAttribute="leading" constant="20" id="0hF-Vp-OqO"/>
+                        <constraint firstItem="sqG-3g-FdX" firstAttribute="top" secondItem="O56-l5-sPL" secondAttribute="top" constant="50" id="4fv-Ji-BSF"/>
+                        <constraint firstAttribute="trailing" secondItem="HNk-v1-Obr" secondAttribute="trailing" constant="20" id="5Rs-FZ-szr"/>
+                        <constraint firstItem="sqG-3g-FdX" firstAttribute="leading" secondItem="O56-l5-sPL" secondAttribute="leading" constant="20" id="O5p-ta-Ed7"/>
+                        <constraint firstAttribute="bottom" secondItem="HNk-v1-Obr" secondAttribute="bottom" constant="20" id="pJF-Ep-UuI"/>
+                        <constraint firstItem="HNk-v1-Obr" firstAttribute="top" secondItem="sqG-3g-FdX" secondAttribute="bottom" constant="30" id="q8c-45-f4F"/>
+                        <constraint firstAttribute="height" constant="270" id="sx1-D9-2Lm"/>
+                    </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="O6O-Qg-PT6">
-                    <rect key="frame" x="0.0" y="298.5" width="414" height="563.5"/>
+                    <rect key="frame" x="0.0" y="262" width="414" height="600"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.26666666666666666" green="0.32156862745098036" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="O6O-Qg-PT6" secondAttribute="bottom" id="2TL-t6-Z2J"/>
-                <constraint firstItem="tSi-yV-ANG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5uk-eK-0ya"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O56-l5-sPL" secondAttribute="trailing" id="BY8-0t-ETf"/>
                 <constraint firstItem="O6O-Qg-PT6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FR6-aU-dk1"/>
+                <constraint firstItem="O56-l5-sPL" firstAttribute="baseline" secondItem="O6O-Qg-PT6" secondAttribute="firstBaseline" constant="8" symbolType="layoutAnchor" id="GbU-le-8ha"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O6O-Qg-PT6" secondAttribute="trailing" id="LVj-0E-58y"/>
-                <constraint firstAttribute="bottom" secondItem="tSi-yV-ANG" secondAttribute="bottom" multiplier="3" id="QHd-oL-mwj"/>
-                <constraint firstItem="8Uc-eZ-zrX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="USK-YG-Kl2"/>
-                <constraint firstItem="O6O-Qg-PT6" firstAttribute="top" secondItem="tSi-yV-ANG" secondAttribute="bottom" id="WF2-MR-0eY"/>
-                <constraint firstItem="8Uc-eZ-zrX" firstAttribute="top" secondItem="tSi-yV-ANG" secondAttribute="bottom" id="dF4-X6-gdw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tSi-yV-ANG" secondAttribute="trailing" constant="20" id="dpB-Aj-g4o"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8Uc-eZ-zrX" secondAttribute="trailing" id="i5j-3D-5ME"/>
-                <constraint firstItem="tSi-yV-ANG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jKr-B4-8ZM"/>
-                <constraint firstAttribute="bottom" secondItem="8Uc-eZ-zrX" secondAttribute="bottom" id="xL1-HT-7dw"/>
+                <constraint firstItem="O56-l5-sPL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZnH-nU-ygQ"/>
+                <constraint firstItem="O56-l5-sPL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="f3w-Cx-8U2"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="50.892857142857139"/>
         </view>

@@ -23,6 +23,10 @@ class Observable<T> {
 
     func bind(_ listener: @escaping (T?) -> Void) {
         listener(value)
-        self.listener = listener
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.listener = listener
+        }
     }
 }

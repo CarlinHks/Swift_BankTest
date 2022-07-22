@@ -7,7 +7,7 @@
 
 // import Foundation
 
-struct Customer {
+struct CustomerModel {
     var id: String
     var customerName: String
     var accountNumber: String
@@ -16,6 +16,6 @@ struct Customer {
 }
 
 // MARK: Decodable extension
-extension Customer: Decodable {
+extension CustomerModel: Decodable {
     
 }

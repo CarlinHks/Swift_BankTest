@@ -8,73 +8,70 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
-    @IBOutlet weak var usernameText: UITextField!
-    @IBOutlet weak var passwordText: UITextField!
+    var loginViewModel = LoginViewModel()
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    var loginViewModel = LoginViewModel()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        initializeElements()
-        initializeViewModels()
+        
+        initElements()
+        initCustomerViewModel()
     }
     
-    func initializeElements() {
-        usernameText.layer.borderColor = UIColor.red.cgColor
-        passwordText.layer.borderColor = UIColor.red.cgColor
+    private func initElements() {
+        usernameTextField.layer.borderColor = UIColor.red.cgColor
+        passwordTextField.layer.borderColor = UIColor.red.cgColor
     }
     
-    func initializeViewModels() {
-        self.initializeCustomerViewModel()
-    }
-    
-    func initializeCustomerViewModel() {
-        loginViewModel.custormer.bind { [weak self] _ in
+    private func initCustomerViewModel() {
+        loginViewModel.custormer.bind {[weak self] _ in
             guard let self = self else { return }
             
-            DispatchQueue.main.async {
-                self.loginButton.isEnabled = true
-                
-                if let customer = self.loginViewModel.custormer.value {
-                    self.navigationController?.pushViewController(PaymentsViewController(customer: customer), animated: true)
-                }
+            if let customer = self.loginViewModel.custormer.value {
+                self.navigationController?.pushViewController(PaymentsViewController(customer: customer), animated: true)
+            }
+        }
+        
+        loginViewModel.isBusy.bind {[weak self] _ in
+            guard let self = self else { return }
+            
+            if let isBusy = self.loginViewModel.isBusy.value {
+                self.loginButton.isEnabled = !isBusy
             }
         }
     }
-
-    @IBAction func loginButton(_ sender: Any) {
+    
+    private func dismissViewError() {
+        usernameTextField.layer.borderWidth = 0
+        passwordTextField.layer.borderWidth = 0
+    }
+    
+    @IBAction private func loginButton(_ sender: Any) {
         var fail = false
-
-        usernameText.layer.borderWidth = 0
-        passwordText.layer.borderWidth = 0
-
-        if let username = usernameText.text,
-           let password = passwordText.text {
-
-//            if username.isEmpty || password.isEmpty {
-//                return
-//            }
-
+        
+        dismissViewError()
+        
+        if let username = usernameTextField.text,
+           let password = passwordTextField.text {
+            
             if !username.isValidUsername() {
-                usernameText.layer.borderWidth = 1
-
+                usernameTextField.layer.borderWidth = 1
+                
                 fail = true
             }
-
+            
             if !password.isValidPassword() {
-                passwordText.layer.borderWidth = 1
-
+                passwordTextField.layer.borderWidth = 1
+                
                 fail = true
             }
-
+            
             if fail {
                 return
             }
-
-            loginButton.isEnabled = false
             
             loginViewModel.authenticate(username: username, password: password)
         }

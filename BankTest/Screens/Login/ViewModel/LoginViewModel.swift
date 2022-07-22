@@ -10,11 +10,17 @@ import Moya
 
 class LoginViewModel {
 
-    let provider = MoyaProvider<NetworkServices>()
-    var custormer: Observable<Customer> = Observable(nil)
+    // Separate Moya calls in other layer
+    let provider = MoyaProvider<MoyaService>()
+    var custormer: Observable<CustomerModel> = Observable(nil)
+    var isBusy: Observable<Bool> = Observable(false)
 
     func authenticate(username: String, password: String) {
-        provider.request(.login(username: username, password: password)) { result in
+        
+        self.isBusy.value = true
+        
+        provider.request(.login(username: username, password: password)) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case let .success(response):
                 let decoder = JSONDecoder()
@@ -22,15 +28,18 @@ class LoginViewModel {
 //                let statusCode = response.statusCode
                 
                 do {
-                    let custormers = try decoder.decode([Customer].self, from: data)
+                    let custormers = try decoder.decode([CustomerModel].self, from: data)
                     self.custormer.value = custormers.first
                 } catch {
+                    // print alert in view
                     print(error)
                 }
             
             case let .failure(error):
                 print(error)
             }
+            
+            self.isBusy.value = false
         }
         return
     }

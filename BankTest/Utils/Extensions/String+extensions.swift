@@ -50,6 +50,7 @@ extension String {
 
         return temp1 == d1 && temp2 == d2
     }
+    
     func isValidUsername() -> Bool {
         return self.isValidEmail() || self.isValidCPF()
     }

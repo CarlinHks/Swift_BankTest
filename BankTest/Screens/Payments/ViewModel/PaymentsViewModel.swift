@@ -9,8 +9,8 @@ import Foundation
 import Moya
 
 class PaymentsViewModel {
-    let provider = MoyaProvider<NetworkServices>()
-    var payments: Observable<[Payment]> = Observable([])
+    let provider = MoyaProvider<MoyaService>()
+    var payments: Observable<[PaymentModel]> = Observable([])
 
     func loadPayments(userId: String) {
         provider.request(.payments(id: userId)) { result in
@@ -21,7 +21,7 @@ class PaymentsViewModel {
 //                let statusCode = response.statusCode
                 
                 do {
-                    let payments = try decoder.decode([Payment].self, from: data)
+                    let payments = try decoder.decode([PaymentModel].self, from: data)
                     self.payments.value = payments
                 } catch {
                     print(error)

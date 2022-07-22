@@ -8,18 +8,18 @@
 import UIKit
 
 class PaymentsViewController: UIViewController {
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var contaLabel: UILabel!
-    @IBOutlet weak var saldoLabel: UILabel!
-    
-    @IBOutlet weak var paymentsTable: UITableView!
-    
-    var customer: Customer
-    
     var paymentsViewModel = PaymentsViewModel()
     
-    init( customer: Customer ) {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var accountLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel!
+    
+    @IBOutlet weak var paymentsTableView: UITableView!
+    
+    // should be in viewmodel
+    var customer: CustomerModel
+    
+    init( customer: CustomerModel ) {
         self.customer = customer
         
         super.init(nibName: nil, bundle: nil)
@@ -32,64 +32,44 @@ class PaymentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavigationBar()
-        updateCustomerData()
-        initializeViewModel()
-        initializeTableView()
+        initCustomerData()
+        initViewModel()
+        initTableView()
+        initNavigationBar()
     }
     
-    func initializeViewModel() {
+    func initNavigationBar() {
+        setNavigationBar(imageNamed: "logout 2")
+    }
+    
+    func initViewModel() {
         paymentsViewModel.payments.bind { [weak self] _ in
             guard let self = self else { return }
             
-            DispatchQueue.main.async {
-                self.paymentsTable.reloadData()
-            }
+            self.paymentsTableView.reloadData()
         }
         
         paymentsViewModel.loadPayments(userId: customer.id)
     }
     
-    func setNavigationBar() {
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        
-        // your custom view for back image with custom size
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 27, height: 27))
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 27, height: 27))
-        
-        if let imgBackArrow = UIImage(named: "logout 2") {
-            imageView.image = imgBackArrow
-        }
-        view.addSubview(imageView)
-        
-        let backTap = UITapGestureRecognizer(target: self, action: #selector(backToMain))
-        view.addGestureRecognizer(backTap)
-        
-        let rightBarButtonItem = UIBarButtonItem(customView: view )
-        self.navigationItem.rightBarButtonItem = rightBarButtonItem
-    }
-    
-    @objc func backToMain() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    func updateCustomerData() {
+    func initCustomerData() {
         nameLabel.text = customer.customerName
-        contaLabel.text = "\(customer.accountNumber) / \(customer.branchNumber)"
-        saldoLabel.text = String(format: "R$ %.2f", Float(customer.checkingAccountBalance))
+        accountLabel.text = "\(customer.accountNumber) / \(customer.branchNumber)"
+        balanceLabel.text = String(format: "R$ %.2f", Float(customer.checkingAccountBalance)) // todo presenter should no be in view
     }
 }
 
 // MARK: TableView DataSource
 extension PaymentsViewController: UITableViewDataSource {
-    func initializeTableView() {
-        paymentsTable.dataSource = self
-        paymentsTable.delegate = self
-        paymentsTable.register(UINib(nibName: "PaymentCell", bundle: nil), forCellReuseIdentifier: "PaymentCell")
+    func initTableView() {
+        paymentsTableView.dataSource = self
+        paymentsTableView.delegate = self
+        paymentsTableView.register(UINib(nibName: "PaymentCell", bundle: nil), forCellReuseIdentifier: "PaymentCell") // todo with generics
+//        paymentsTable.register(PaymentCell.self)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Recentes"
+        return "Recentes" // TODO viewForHeaderInSection
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,7 +77,7 @@ extension PaymentsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell", for: indexPath) as? PaymentCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell", for: indexPath) as? PaymentCell {// todo - generics
             if let payment = paymentsViewModel.payments.value?[indexPath.row] {
                 cell.dateLabel.text = payment.paymentDate
             }

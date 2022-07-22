@@ -8,13 +8,13 @@
 import Foundation
 import Moya
 
-enum NetworkServices {
+enum MoyaService {
     case login(username: String, password: String)
     case payments(id: String)
 }
 
 // MARK: - TargetType Protocol Implementation
-extension NetworkServices: TargetType {
+extension MoyaService: TargetType {
     var baseURL: URL {
         URL(string: "https://60bd336db8ab3700175a03b3.mockapi.io/treinamento")!
     }
