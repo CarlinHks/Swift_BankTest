@@ -14,6 +14,8 @@ class PaymentsViewController: UIViewController {
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
+    var coordinator: Coordinator?
+    
     @IBOutlet weak var paymentsTableView: UITableView!
     
     // should be in viewmodel
@@ -94,4 +96,8 @@ extension PaymentsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+}
+
+// MARK: Coordinating protocol
+extension PaymentsViewController: Coordinating {
 }

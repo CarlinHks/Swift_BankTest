@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    var coordinator: Coordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +33,7 @@ class LoginViewController: UIViewController {
             guard let self = self else { return }
             
             if let customer = self.loginViewModel.custormer.value {
-                self.navigationController?.pushViewController(PaymentsViewController(customer: customer), animated: true)
+                self.coordinator?.eventOccurred(with: .loginButtonTapped(customer: customer))
             }
         }
         
@@ -76,4 +78,8 @@ class LoginViewController: UIViewController {
             loginViewModel.authenticate(username: username, password: password)
         }
     }
+}
+
+// MARK: Coordinating protocol
+extension LoginViewController: Coordinating {
 }
