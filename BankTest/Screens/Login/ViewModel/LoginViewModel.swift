@@ -9,38 +9,33 @@ import Foundation
 import Moya
 
 class LoginViewModel {
-
-    // Separate Moya calls in other layer
-    let provider = MoyaProvider<MoyaService>()
-    var custormer: Observable<CustomerModel> = Observable(nil)
+    var customer: Observable<CustomerModel> = Observable(nil)
     var isBusy: Observable<Bool> = Observable(false)
-
+    var isValidUsername: Observable<Bool> = Observable(true)
+    var isValidPassword: Observable<Bool> = Observable(true)
+    var errorMessage: Observable<String> = Observable("")
+    
     func authenticate(username: String, password: String) {
+        self.isValidUsername.value = username.isValidUsername()
+        self.isValidPassword.value = password.isValidPassword()
+        
+        if self.isValidUsername.value == false ||
+            self.isValidPassword.value == false {
+            return
+        }
         
         self.isBusy.value = true
         
-        provider.request(.login(username: username, password: password)) { [weak self] result in
+        ExternalService().login(username: username, password: password) { [weak self] customer in
             guard let self = self else { return }
-            switch result {
-            case let .success(response):
-                let decoder = JSONDecoder()
-                let data = response.data
-//                let statusCode = response.statusCode
-                
-                do {
-                    let custormers = try decoder.decode([CustomerModel].self, from: data)
-                    self.custormer.value = custormers.first
-                } catch {
-                    // print alert in view
-                    print(error)
-                }
             
-            case let .failure(error):
-                print(error)
-            }
+            self.customer.value = customer
+            self.isBusy.value = false
+        } errorCB: { [weak self] message in
+            guard let self = self else { return }
             
+            self.errorMessage.value = message
             self.isBusy.value = false
         }
-        return
     }
 }

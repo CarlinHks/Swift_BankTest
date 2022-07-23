@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var waitingIndicatorView: UIActivityIndicatorView!
     
     var coordinator: Coordinator?
     
@@ -20,7 +21,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         initElements()
-        initCustomerViewModel()
+        bindCustomerViewModel()
     }
     
     private func initElements() {
@@ -28,11 +29,21 @@ class LoginViewController: UIViewController {
         passwordTextField.layer.borderColor = UIColor.red.cgColor
     }
     
-    private func initCustomerViewModel() {
-        loginViewModel.custormer.bind {[weak self] _ in
+    @IBAction private func loginButtonTapped(_ sender: Any) {
+        if let username = usernameTextField.text,
+           let password = passwordTextField.text {
+            loginViewModel.authenticate(username: username, password: password)
+        }
+    }
+}
+
+// MARK: ViewModel bind
+extension LoginViewController {
+    private func bindCustomerViewModel() {
+        loginViewModel.customer.bind {[weak self] _ in
             guard let self = self else { return }
             
-            if let customer = self.loginViewModel.custormer.value {
+            if let customer = self.loginViewModel.customer.value {
                 self.coordinator?.eventOccurred(with: .loginButtonTapped(customer: customer))
             }
         }
@@ -42,40 +53,42 @@ class LoginViewController: UIViewController {
             
             if let isBusy = self.loginViewModel.isBusy.value {
                 self.loginButton.isEnabled = !isBusy
+                self.waitingIndicatorView.isHidden = !isBusy
             }
         }
-    }
-    
-    private func dismissViewError() {
-        usernameTextField.layer.borderWidth = 0
-        passwordTextField.layer.borderWidth = 0
-    }
-    
-    @IBAction private func loginButton(_ sender: Any) {
-        var fail = false
         
-        dismissViewError()
+        loginViewModel.isValidUsername.bind {[weak self] _ in
+            guard let self = self else { return }
+            
+            if let isValidUsername = self.loginViewModel.isValidUsername.value {
+                if isValidUsername {
+                    self.usernameTextField.layer.borderWidth = 0
+                } else {
+                    self.usernameTextField.layer.borderWidth = 1
+                }
+            }
+        }
         
-        if let username = usernameTextField.text,
-           let password = passwordTextField.text {
+        loginViewModel.isValidPassword.bind {[weak self] _ in
+            guard let self = self else { return }
             
-            if !username.isValidUsername() {
-                usernameTextField.layer.borderWidth = 1
-                
-                fail = true
+            if let isValidPassword = self.loginViewModel.isValidPassword.value {
+                if isValidPassword {
+                    self.passwordTextField.layer.borderWidth = 0
+                } else {
+                    self.passwordTextField.layer.borderWidth = 1
+                }
             }
+        }
+        
+        loginViewModel.errorMessage.bind {[weak self] _ in
+            guard let self = self else { return }
             
-            if !password.isValidPassword() {
-                passwordTextField.layer.borderWidth = 1
-                
-                fail = true
+            if let errorMessage = self.loginViewModel.errorMessage.value {
+                if errorMessage.count > 0 {
+                    self.showAlert(message: errorMessage)
+                }
             }
-            
-            if fail {
-                return
-            }
-            
-            loginViewModel.authenticate(username: username, password: password)
         }
     }
 }
