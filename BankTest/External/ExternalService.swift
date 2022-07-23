@@ -8,34 +8,73 @@
 import Foundation
 import Moya
 
+enum NetworkErrors: Error {
+    case noDataError
+    case decodeError
+    case internalServerError(Error)
+    
+    func getErrorMessage() -> String {
+        switch self {
+        case .noDataError:
+            return "Not Found!"
+        case .decodeError:
+            return "Decode Fail!"
+        case .internalServerError(let error):
+            return error.localizedDescription
+        }
+    }
+}
+
 class ExternalService {
     let provider = MoyaProvider<MoyaService>()
-
+    
     func login(username: String,
                password: String,
-               successCB: @escaping (CustomerModel) -> Void,
-               errorCB: @escaping (String) -> Void) {
+               completion: @escaping (Result<CustomerModel, NetworkErrors>) -> Void) {
         provider.request(.login(username: username, password: password)) { result in
             switch result {
             case let .success(response):
                 let decoder = JSONDecoder()
                 let data = response.data
-
+                
                 do {
                     let custormers = try decoder.decode([CustomerModel].self, from: data)
                     
                     if let customer = custormers.first {
-                        return successCB(customer)
+                        completion(.success(customer))
+                    } else {
+                        completion(.failure(.noDataError))
                     }
-                    
-                    return errorCB("Empty")
+                } catch {
+                    completion(.failure(.decodeError))
+                }
+                
+            case let .failure(error):
+                completion(.failure(.internalServerError(error)))
+            }
+        }
+    }
+    
+    func loadPayments(userId: String,
+                      successCB: @escaping ([PaymentModel]) -> Void,
+                      errorCB: @escaping (String) -> Void) {
+        provider.request(.payments(id: userId)) { result in
+            switch result {
+            case let .success(response):
+                let decoder = JSONDecoder()
+                let data = response.data
+                
+                do {
+                    let payments = try decoder.decode([PaymentModel].self, from: data)
+                    return successCB(payments)
                 } catch {
                     return errorCB(error.localizedDescription)
                 }
-
+                
             case let .failure(error):
                 return errorCB(error.localizedDescription)
             }
         }
+        return
     }
 }

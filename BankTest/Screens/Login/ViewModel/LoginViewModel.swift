@@ -6,16 +6,15 @@
 //
 
 import Foundation
-import Moya
 
 class LoginViewModel {
+    let externalService = ExternalService()
+    
     var customer: Observable<CustomerModel> = Observable(nil)
     var isBusy: Observable<Bool> = Observable(false)
     var isValidUsername: Observable<Bool> = Observable(true)
     var isValidPassword: Observable<Bool> = Observable(true)
     var errorMessage: Observable<String> = Observable("")
-    
-    let externalService = ExternalService()
     
     func authenticate(username: String, password: String) {
         self.isValidUsername.value = username.isValidUsername()
@@ -28,16 +27,20 @@ class LoginViewModel {
         
         self.isBusy.value = true
         
-        externalService.login(username: username, password: password) { [weak self] customer in
+        externalService.login(username: username,
+                              password: password) { [weak self] result in
             guard let self = self else { return }
             
-            self.customer.value = customer
-            self.isBusy.value = false
-        } errorCB: { [weak self] message in
-            guard let self = self else { return }
-            
-            self.errorMessage.value = message
-            self.isBusy.value = false
+            switch result {
+            case .success(let customer):
+                self.customer.value = customer
+                self.isBusy.value = false
+
+            case .failure(let error):
+                self.errorMessage.value = error.getErrorMessage()
+                self.isBusy.value = false
+
+            }
         }
     }
 }

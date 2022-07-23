@@ -6,31 +6,30 @@
 //
 
 import Foundation
-import Moya
 
 class PaymentsViewModel {
-    let provider = MoyaProvider<MoyaService>()
+    let externalService = ExternalService()
+    
+//    var customer: Observable<CustomerModel>
     var payments: Observable<[PaymentModel]> = Observable([])
-
+    var isBusy: Observable<Bool> = Observable(true)
+    var errorMessage: Observable<String> = Observable("")
+    
+//    init(customer: CustomerModel) {
+//
+//    }
+    
     func loadPayments(userId: String) {
-        provider.request(.payments(id: userId)) { result in
-            switch result {
-            case let .success(response):
-                let decoder = JSONDecoder()
-                let data = response.data
-//                let statusCode = response.statusCode
-                
-                do {
-                    let payments = try decoder.decode([PaymentModel].self, from: data)
-                    self.payments.value = payments
-                } catch {
-                    print(error)
-                }
+        externalService.loadPayments(userId: userId) { [weak self] payments in
+            guard let self = self else { return }
             
-            case let .failure(error):
-                print(error)
-            }
+            self.payments.value = payments
+            self.isBusy.value = false
+        } errorCB: { [weak self] message in
+            guard let self = self else { return }
+            
+            self.errorMessage.value = message
+            self.isBusy.value = false
         }
-        return
     }
 }

@@ -10,18 +10,19 @@ import UIKit
 class LoginViewController: UIViewController {
     var loginViewModel = LoginViewModel()
     
+    var coordinator: Coordinator?
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var waitingIndicatorView: UIActivityIndicatorView!
     
-    var coordinator: Coordinator?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initElements()
-        bindCustomerViewModel()
+        
+        bindViewModel()
     }
     
     private func initElements() {
@@ -40,7 +41,7 @@ class LoginViewController: UIViewController {
 // MARK: ViewModel bind
 // swiftlint: disable cyclomatic_complexity
 extension LoginViewController {
-    private func bindCustomerViewModel() {
+    private func bindViewModel() {
         loginViewModel.customer.bind {[weak self] _ in
             guard let self = self else { return }
             

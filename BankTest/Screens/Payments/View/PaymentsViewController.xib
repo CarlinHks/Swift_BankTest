@@ -15,6 +15,7 @@
                 <outlet property="nameLabel" destination="sqG-3g-FdX" id="IE7-bG-OZl"/>
                 <outlet property="paymentsTableView" destination="O6O-Qg-PT6" id="262-2t-8MB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="waitingIndicatorView" destination="Kjo-8E-AsI" id="0zf-24-log"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -89,6 +90,9 @@
                     <rect key="frame" x="0.0" y="262" width="414" height="600"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Kjo-8E-AsI">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
@@ -97,8 +101,10 @@
                 <constraint firstItem="O6O-Qg-PT6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FR6-aU-dk1"/>
                 <constraint firstItem="O56-l5-sPL" firstAttribute="baseline" secondItem="O6O-Qg-PT6" secondAttribute="firstBaseline" constant="8" symbolType="layoutAnchor" id="GbU-le-8ha"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O6O-Qg-PT6" secondAttribute="trailing" id="LVj-0E-58y"/>
+                <constraint firstItem="Kjo-8E-AsI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Rt3-Jl-EMz"/>
                 <constraint firstItem="O56-l5-sPL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZnH-nU-ygQ"/>
                 <constraint firstItem="O56-l5-sPL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="f3w-Cx-8U2"/>
+                <constraint firstItem="Kjo-8E-AsI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="nLd-Bh-5fI"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="50.892857142857139"/>
         </view>

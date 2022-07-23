@@ -10,18 +10,18 @@ import UIKit
 class PaymentsViewController: UIViewController {
     var paymentsViewModel = PaymentsViewModel()
     
+    var coordinator: Coordinator?
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
-    
-    var coordinator: Coordinator?
+    @IBOutlet weak var waitingIndicatorView: UIActivityIndicatorView!
     
     @IBOutlet weak var paymentsTableView: UITableView!
     
-    // should be in viewmodel
     var customer: CustomerModel
     
-    init( customer: CustomerModel ) {
+    init(customer: CustomerModel) {
         self.customer = customer
         
         super.init(nibName: nil, bundle: nil)
@@ -35,29 +35,41 @@ class PaymentsViewController: UIViewController {
         super.viewDidLoad()
         
         initCustomerData()
-        initViewModel()
         initTableView()
         initNavigationBar()
+        
+        bindViewModel()
     }
     
     func initNavigationBar() {
         setNavigationBar(imageNamed: "logout 2")
     }
     
-    func initViewModel() {
+    func initCustomerData() {
+        nameLabel.text = customer.customerName
+        accountLabel.text = "\(customer.accountNumber) / \(customer.branchNumber)"
+        balanceLabel.text = String(format: "R$ %.2f", Float(customer.checkingAccountBalance)) // todo presenter should no be in view
+    }
+}
+
+// MARK: ViewModel bind
+extension PaymentsViewController {
+    func bindViewModel() {
         paymentsViewModel.payments.bind { [weak self] _ in
             guard let self = self else { return }
             
             self.paymentsTableView.reloadData()
         }
         
+        paymentsViewModel.isBusy.bind { [weak self] _ in
+            guard let self = self else { return }
+            
+            if let isBusy = self.paymentsViewModel.isBusy.value {
+                self.waitingIndicatorView.isHidden = !isBusy
+            }
+        }
+        
         paymentsViewModel.loadPayments(userId: customer.id)
-    }
-    
-    func initCustomerData() {
-        nameLabel.text = customer.customerName
-        accountLabel.text = "\(customer.accountNumber) / \(customer.branchNumber)"
-        balanceLabel.text = String(format: "R$ %.2f", Float(customer.checkingAccountBalance)) // todo presenter should no be in view
     }
 }
 
