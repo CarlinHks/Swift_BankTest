@@ -15,6 +15,8 @@ class LoginViewModel {
     var isValidPassword: Observable<Bool> = Observable(true)
     var errorMessage: Observable<String> = Observable("")
     
+    let externalService = ExternalService()
+    
     func authenticate(username: String, password: String) {
         self.isValidUsername.value = username.isValidUsername()
         self.isValidPassword.value = password.isValidPassword()
@@ -26,7 +28,7 @@ class LoginViewModel {
         
         self.isBusy.value = true
         
-        ExternalService().login(username: username, password: password) { [weak self] customer in
+        externalService.login(username: username, password: password) { [weak self] customer in
             guard let self = self else { return }
             
             self.customer.value = customer

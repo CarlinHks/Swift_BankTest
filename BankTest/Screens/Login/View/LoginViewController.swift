@@ -38,6 +38,7 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: ViewModel bind
+// swiftlint: disable cyclomatic_complexity
 extension LoginViewController {
     private func bindCustomerViewModel() {
         loginViewModel.customer.bind {[weak self] _ in
@@ -92,6 +93,7 @@ extension LoginViewController {
         }
     }
 }
+// swiftlint: enable cyclomatic_complexity
 
 // MARK: Coordinating protocol
 extension LoginViewController: Coordinating {

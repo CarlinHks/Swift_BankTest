@@ -36,8 +36,6 @@ class ExternalService {
             case let .failure(error):
                 return errorCB(error.localizedDescription)
             }
-
-//            self.isBusy.value = false
         }
     }
 }

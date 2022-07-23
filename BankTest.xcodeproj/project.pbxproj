@@ -12,7 +12,7 @@
 		D74D8C16287A9E66006AB434 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D74D8C14287A9E66006AB434 /* Logo.png */; };
 		D7502EB92881040B0070D972 /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7502EB72881040B0070D972 /* PaymentCell.swift */; };
 		D7502EBA2881040B0070D972 /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7502EB82881040B0070D972 /* PaymentCell.xib */; };
-		D7BEDCF428890610008A35A2 /* External.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEDCF328890610008A35A2 /* External.swift */; };
+		D7BEDCF428890610008A35A2 /* ExternalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEDCF328890610008A35A2 /* ExternalService.swift */; };
 		D7BEDCF6288907DA008A35A2 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEDCF5288907DA008A35A2 /* UIViewController+extensions.swift */; };
 		D7BEDCFA288A5F47008A35A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEDCF9288A5F47008A35A2 /* Coordinator.swift */; };
 		D7BEDCFD288A5FAC008A35A2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEDCFC288A5FAC008A35A2 /* MainCoordinator.swift */; };
@@ -62,7 +62,7 @@
 		D74D8C14287A9E66006AB434 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		D7502EB72881040B0070D972 /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
 		D7502EB82881040B0070D972 /* PaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
-		D7BEDCF328890610008A35A2 /* External.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = External.swift; sourceTree = "<group>"; };
+		D7BEDCF328890610008A35A2 /* ExternalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalService.swift; sourceTree = "<group>"; };
 		D7BEDCF5288907DA008A35A2 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		D7BEDCF9288A5F47008A35A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D7BEDCFC288A5FAC008A35A2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -197,7 +197,8 @@
 		D7BEDCF2288905CA008A35A2 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				D7BEDCF328890610008A35A2 /* External.swift */,
+				D7E61F28287E1ABE00BDCF12 /* MoyaService */,
+				D7BEDCF328890610008A35A2 /* ExternalService.swift */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -256,7 +257,6 @@
 				D7BEDCFB288A5F95008A35A2 /* Coordinator */,
 				D7BEDCF2288905CA008A35A2 /* External */,
 				D7FB9BC6287FCF7400147C1F /* Screens */,
-				D7E61F28287E1ABE00BDCF12 /* Networking */,
 				D7D26F17287B88F500F2EE08 /* Utils */,
 				D74D8C17287A9E9F006AB434 /* Assets */,
 				D7CE5F622877E29A00FA66AD /* AppDelegate.swift */,
@@ -314,12 +314,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D7E61F28287E1ABE00BDCF12 /* Networking */ = {
+		D7E61F28287E1ABE00BDCF12 /* MoyaService */ = {
 			isa = PBXGroup;
 			children = (
 				D7E61F29287E1B9600BDCF12 /* MoyaService.swift */,
 			);
-			path = Networking;
+			path = MoyaService;
 			sourceTree = "<group>";
 		};
 		D7E61F2B287E839800BDCF12 /* Class */ = {
@@ -560,7 +560,7 @@
 				D7BEDCFD288A5FAC008A35A2 /* MainCoordinator.swift in Sources */,
 				D7E61F2D287E83AB00BDCF12 /* Observable.swift in Sources */,
 				D7CE5F652877E29A00FA66AD /* SceneDelegate.swift in Sources */,
-				D7BEDCF428890610008A35A2 /* External.swift in Sources */,
+				D7BEDCF428890610008A35A2 /* ExternalService.swift in Sources */,
 				D7D26F1A287B895900F2EE08 /* String+extensions.swift in Sources */,
 				D7E61F2A287E1B9600BDCF12 /* MoyaService.swift in Sources */,
 				D7E61F27287E082400BDCF12 /* LoginViewModel.swift in Sources */,
