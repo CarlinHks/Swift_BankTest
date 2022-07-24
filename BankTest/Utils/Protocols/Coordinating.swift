@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 protocol Coordinating {
-    var coordinator: Coordinator? { get set }
+    var coordinator: Coordinator { get set }
 }

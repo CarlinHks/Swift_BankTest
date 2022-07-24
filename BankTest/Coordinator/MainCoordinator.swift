@@ -11,19 +11,20 @@ import UIKit
 class MainCoordinator: Coordinator {
     var navigationController: UINavigationController?
     
+    func start() {
+        let viewModel = LoginViewModel(self)
+        let viewControllr = LoginViewController(viewModel)
+        
+        navigationController?.setViewControllers([viewControllr], animated: false)
+    }
+    
     func eventOccurred(with type: Event) {
         switch type {
         case .loginButtonTapped(let customer):
-            var viewControllr: UIViewController & Coordinating = PaymentsViewController(customer: customer)
-            viewControllr.coordinator = self
-            navigationController?.pushViewController(viewControllr, animated: true)
+            let viewModel = PaymentsViewModel(self, customer)
+            let viewController = PaymentsViewController(viewModel)
+
+            navigationController?.pushViewController(viewController, animated: true)
         }
-    }
-    
-    func start() {
-        var loginViewControllr: UIViewController & Coordinating = LoginViewController()
-        loginViewControllr.coordinator = self
-        
-        navigationController?.setViewControllers([loginViewControllr], animated: false)
     }
 }

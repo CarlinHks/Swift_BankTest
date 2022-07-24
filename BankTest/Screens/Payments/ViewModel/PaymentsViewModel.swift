@@ -8,16 +8,20 @@
 import Foundation
 
 class PaymentsViewModel {
+    var coordinator: Coordinator
     let externalService = ExternalService()
+    
+    var customer: CustomerModel
     
 //    var customer: Observable<CustomerModel>
     var payments: Observable<[PaymentModel]> = Observable([])
     var isBusy: Observable<Bool> = Observable(true)
     var errorMessage: Observable<String> = Observable("")
     
-//    init(customer: CustomerModel) {
-//
-//    }
+    init(_ coordinator: Coordinator, _ customer: CustomerModel) {
+        self.coordinator = coordinator
+        self.customer = customer
+    }
     
     func loadPayments(userId: String) {
         externalService.loadPayments(userId: userId) { [weak self] payments in
@@ -32,4 +36,8 @@ class PaymentsViewModel {
             self.isBusy.value = false
         }
     }
+}
+
+// MARK: Coordinating protocol
+extension PaymentsViewModel: Coordinating {
 }

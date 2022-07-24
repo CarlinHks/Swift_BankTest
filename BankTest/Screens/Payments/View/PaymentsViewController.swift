@@ -8,9 +8,7 @@
 import UIKit
 
 class PaymentsViewController: UIViewController {
-    var paymentsViewModel = PaymentsViewModel()
-    
-    var coordinator: Coordinator?
+    var paymentsViewModel: PaymentsViewModel
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var accountLabel: UILabel!
@@ -19,10 +17,8 @@ class PaymentsViewController: UIViewController {
     
     @IBOutlet weak var paymentsTableView: UITableView!
     
-    var customer: CustomerModel
-    
-    init(customer: CustomerModel) {
-        self.customer = customer
+    init(_ viewModel: PaymentsViewModel) {
+        paymentsViewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,8 +33,7 @@ class PaymentsViewController: UIViewController {
         initCustomerData()
         initTableView()
         initNavigationBar()
-        
-        bindViewModel()
+        initViewModel()
     }
     
     func initNavigationBar() {
@@ -46,15 +41,15 @@ class PaymentsViewController: UIViewController {
     }
     
     func initCustomerData() {
-        nameLabel.text = customer.customerName
-        accountLabel.text = "\(customer.accountNumber) / \(customer.branchNumber)"
-        balanceLabel.text = String(format: "R$ %.2f", Float(customer.checkingAccountBalance)) // todo presenter should no be in view
+        nameLabel.text = paymentsViewModel.customer.customerName
+        accountLabel.text = "\(paymentsViewModel.customer.accountNumber) / \(paymentsViewModel.customer.branchNumber)"
+        balanceLabel.text = String(format: "R$ %.2f", Float(paymentsViewModel.customer.checkingAccountBalance)) // todo presenter should no be in view
     }
 }
 
 // MARK: ViewModel bind
 extension PaymentsViewController {
-    func bindViewModel() {
+    func initViewModel() {
         paymentsViewModel.payments.bind { [weak self] _ in
             guard let self = self else { return }
             
@@ -69,7 +64,7 @@ extension PaymentsViewController {
             }
         }
         
-        paymentsViewModel.loadPayments(userId: customer.id)
+        paymentsViewModel.loadPayments(userId: self.paymentsViewModel.customer.id)
     }
 }
 
@@ -104,8 +99,4 @@ extension PaymentsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-}
-
-// MARK: Coordinating protocol
-extension PaymentsViewController: Coordinating {
 }

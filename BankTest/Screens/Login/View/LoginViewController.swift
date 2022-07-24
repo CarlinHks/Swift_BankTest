@@ -8,21 +8,29 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    var loginViewModel = LoginViewModel()
-    
-    var coordinator: Coordinator?
+    var loginViewModel: LoginViewModel
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var waitingIndicatorView: UIActivityIndicatorView!
     
+    init(_ viewModel: LoginViewModel) {
+        loginViewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initElements()
         
-        bindViewModel()
+        initViewModel()
     }
     
     private func initElements() {
@@ -41,12 +49,12 @@ class LoginViewController: UIViewController {
 // MARK: ViewModel bind
 // swiftlint: disable cyclomatic_complexity
 extension LoginViewController {
-    private func bindViewModel() {
+    private func initViewModel() {
         loginViewModel.customer.bind {[weak self] _ in
             guard let self = self else { return }
             
             if let customer = self.loginViewModel.customer.value {
-                self.coordinator?.eventOccurred(with: .loginButtonTapped(customer: customer))
+                self.loginViewModel.coordinator.eventOccurred(with: .loginButtonTapped(customer: customer))
             }
         }
         
@@ -95,7 +103,3 @@ extension LoginViewController {
     }
 }
 // swiftlint: enable cyclomatic_complexity
-
-// MARK: Coordinating protocol
-extension LoginViewController: Coordinating {
-}

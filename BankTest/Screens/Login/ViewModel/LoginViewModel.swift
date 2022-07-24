@@ -8,6 +8,8 @@
 import Foundation
 
 class LoginViewModel {
+    var coordinator: Coordinator
+    
     let externalService = ExternalService()
     
     var customer: Observable<CustomerModel> = Observable(nil)
@@ -15,6 +17,10 @@ class LoginViewModel {
     var isValidUsername: Observable<Bool> = Observable(true)
     var isValidPassword: Observable<Bool> = Observable(true)
     var errorMessage: Observable<String> = Observable("")
+    
+    init(_ coordinator: Coordinator) {
+        self.coordinator = coordinator
+    }
     
     func authenticate(username: String, password: String) {
         self.isValidUsername.value = username.isValidUsername()
@@ -43,4 +49,8 @@ class LoginViewModel {
             }
         }
     }
+}
+
+// MARK: Coordinating protocol
+extension LoginViewModel: Coordinating {
 }
