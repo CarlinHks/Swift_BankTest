@@ -78,8 +78,7 @@ extension PaymentsViewController: UITableViewDataSource {
     func initTableView() {
         paymentsTableView.dataSource = self
         paymentsTableView.delegate = self
-        paymentsTableView.register(UINib(nibName: "PaymentCell", bundle: nil), forCellReuseIdentifier: "PaymentCell") // todo with generics
-//        paymentsTable.register(PaymentCell.self)
+        paymentsTableView.register(PaymentCell.self)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -91,15 +90,12 @@ extension PaymentsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell", for: indexPath) as? PaymentCell {// todo - generics
-            if let payment = paymentsViewModel.payments.value?[indexPath.row] {
-                cell.dateLabel.text = payment.paymentDate
-            }
-            
-            return cell
+        let cell = tableView.dequeueReusableCell(PaymentCell.self, for: indexPath)
+        if let payment = paymentsViewModel.payments.value?[indexPath.row] {
+            cell.dateLabel.text = payment.paymentDate
         }
         
-        return UITableViewCell()
+        return cell
     }
 }
 
