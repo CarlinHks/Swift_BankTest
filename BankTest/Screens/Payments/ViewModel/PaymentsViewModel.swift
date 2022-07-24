@@ -9,11 +9,10 @@ import Foundation
 
 class PaymentsViewModel {
     private var coordinator: Coordinator
-    let externalService = ExternalService()
+    private let externalService = ExternalService()
     
     var customer: CustomerModel
     
-//    var customer: Observable<CustomerModel>
     var payments: Observable<[PaymentModel]> = Observable([])
     var isBusy: Observable<Bool> = Observable(true)
     var errorMessage: Observable<String> = Observable("")
@@ -24,16 +23,17 @@ class PaymentsViewModel {
     }
     
     func loadPayments(userId: String) {
-        externalService.loadPayments(userId: userId) { [weak self] payments in
+        externalService.loadPayments(userId: userId) { [weak self] result in
             guard let self = self else { return }
             
-            self.payments.value = payments
-            self.isBusy.value = false
-        } errorCB: { [weak self] message in
-            guard let self = self else { return }
-            
-            self.errorMessage.value = message
-            self.isBusy.value = false
+            switch result {
+            case .success(let payments):
+                self.payments.value = payments
+                self.isBusy.value = false
+            case .failure(let error):
+                self.errorMessage.value = error.getErrorMessage()
+                self.isBusy.value = false
+            }
         }
     }
 }

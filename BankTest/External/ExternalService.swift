@@ -56,8 +56,7 @@ class ExternalService {
     }
     
     func loadPayments(userId: String,
-                      successCB: @escaping ([PaymentModel]) -> Void,
-                      errorCB: @escaping (String) -> Void) {
+                      completion: @escaping (Result<[PaymentModel], NetworkErrors>) -> Void) {
         provider.request(.payments(id: userId)) { result in
             switch result {
             case let .success(response):
@@ -66,13 +65,13 @@ class ExternalService {
                 
                 do {
                     let payments = try decoder.decode([PaymentModel].self, from: data)
-                    return successCB(payments)
+                    completion(.success(payments))
                 } catch {
-                    return errorCB(error.localizedDescription)
+                    completion(.failure(.decodeError))
                 }
                 
             case let .failure(error):
-                return errorCB(error.localizedDescription)
+                completion(.failure(.internalServerError(error)))
             }
         }
         return
