@@ -8,7 +8,7 @@
 import Foundation
 
 class PaymentsViewModel {
-    var coordinator: Coordinator
+    private var coordinator: Coordinator
     let externalService = ExternalService()
     
     var customer: CustomerModel
@@ -36,8 +36,4 @@ class PaymentsViewModel {
             self.isBusy.value = false
         }
     }
-}
-
-// MARK: Coordinating protocol
-extension PaymentsViewModel: Coordinating {
 }

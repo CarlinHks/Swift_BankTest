@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         initElements()
-        
         initViewModel()
     }
     
@@ -53,9 +52,7 @@ extension LoginViewController {
         loginViewModel.customer.bind {[weak self] _ in
             guard let self = self else { return }
             
-            if let customer = self.loginViewModel.customer.value {
-                self.loginViewModel.coordinator.eventOccurred(with: .loginButtonTapped(customer: customer))
-            }
+            self.loginViewModel.navigateToPaymentsScreen()
         }
         
         loginViewModel.isBusy.bind {[weak self] _ in

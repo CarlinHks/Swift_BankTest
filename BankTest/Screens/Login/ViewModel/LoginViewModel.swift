@@ -8,9 +8,9 @@
 import Foundation
 
 class LoginViewModel {
-    var coordinator: Coordinator
+    private var coordinator: Coordinator
     
-    let externalService = ExternalService()
+    private let externalService = ExternalService()
     
     var customer: Observable<CustomerModel> = Observable(nil)
     var isBusy: Observable<Bool> = Observable(false)
@@ -20,6 +20,12 @@ class LoginViewModel {
     
     init(_ coordinator: Coordinator) {
         self.coordinator = coordinator
+    }
+    
+    func navigateToPaymentsScreen() {
+        if let customer = self.customer.value {
+            coordinator.eventOccurred(with: .loginButtonTapped(customer: customer))
+        }
     }
     
     func authenticate(username: String, password: String) {
@@ -49,8 +55,4 @@ class LoginViewModel {
             }
         }
     }
-}
-
-// MARK: Coordinating protocol
-extension LoginViewModel: Coordinating {
 }
