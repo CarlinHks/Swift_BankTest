@@ -97,6 +97,7 @@ extension PaymentsViewController: UITableViewDataSource {
 // MARK: TableView Delegate
 extension PaymentsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        // cell + top + bottom
+        return 80+10+10
     }
 }

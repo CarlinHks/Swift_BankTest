@@ -20,38 +20,38 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftP-Dt-n6x">
                         <rect key="frame" x="16" y="10" width="494" height="133"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TUK-bI-53q">
-                                <rect key="frame" x="0.0" y="0.0" width="494" height="133"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="TUK-bI-53q">
+                                <rect key="frame" x="10" y="0.0" width="474" height="133"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="3eR-P3-H75">
-                                        <rect key="frame" x="0.0" y="0.0" width="494" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="474" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJ4-fk-8z4">
-                                                <rect key="frame" x="0.0" y="0.0" width="99.5" height="66.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="61.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26/05/1992" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgv-Po-yr9">
-                                                <rect key="frame" x="405.5" y="0.0" width="88.5" height="66.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="399" y="0.0" width="75" height="61.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="5MC-h3-0DX">
-                                        <rect key="frame" x="0.0" y="66.5" width="494" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="61.5" width="474" height="71.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta de Luz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPr-QB-kFk">
-                                                <rect key="frame" x="0.0" y="0.0" width="116.5" height="66.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="71.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 1.000,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zP-ic-W4e">
-                                                <rect key="frame" x="371" y="0.0" width="123" height="66.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <rect key="frame" x="368" y="0.0" width="106" height="71.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -61,22 +61,24 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="TUK-bI-53q" firstAttribute="top" secondItem="ftP-Dt-n6x" secondAttribute="top" id="H57-w1-RmQ"/>
-                            <constraint firstAttribute="trailing" secondItem="TUK-bI-53q" secondAttribute="trailing" id="YoV-5V-vcL"/>
-                            <constraint firstItem="TUK-bI-53q" firstAttribute="leading" secondItem="ftP-Dt-n6x" secondAttribute="leading" id="h6e-nl-VEh"/>
-                            <constraint firstAttribute="bottom" secondItem="TUK-bI-53q" secondAttribute="bottom" id="oOl-TL-7HY"/>
+                            <constraint firstAttribute="bottom" secondItem="TUK-bI-53q" secondAttribute="bottom" id="3Zj-U0-fcF"/>
+                            <constraint firstAttribute="trailing" secondItem="TUK-bI-53q" secondAttribute="trailing" constant="10" id="43g-3t-N7a"/>
+                            <constraint firstItem="TUK-bI-53q" firstAttribute="leading" secondItem="ftP-Dt-n6x" secondAttribute="leading" constant="10" id="Urf-T9-Rlf"/>
+                            <constraint firstItem="TUK-bI-53q" firstAttribute="centerY" secondItem="ftP-Dt-n6x" secondAttribute="centerY" id="pWz-WW-xjw"/>
+                            <constraint firstItem="TUK-bI-53q" firstAttribute="top" secondItem="ftP-Dt-n6x" secondAttribute="top" id="t8J-Mu-bjN"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ftP-Dt-n6x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="XBV-Dn-0VQ"/>
-                    <constraint firstItem="ftP-Dt-n6x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gdW-zS-sB8"/>
-                    <constraint firstAttribute="trailing" secondItem="ftP-Dt-n6x" secondAttribute="trailing" constant="16" id="hNz-sQ-FM5"/>
-                    <constraint firstAttribute="bottom" secondItem="ftP-Dt-n6x" secondAttribute="bottom" constant="10" id="nyR-Ri-GSs"/>
+                    <constraint firstAttribute="bottom" secondItem="ftP-Dt-n6x" secondAttribute="bottom" constant="10" id="3qU-wp-2gs"/>
+                    <constraint firstItem="ftP-Dt-n6x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Aiw-Yg-Sfp"/>
+                    <constraint firstItem="ftP-Dt-n6x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="NFQ-Nr-jNr"/>
+                    <constraint firstAttribute="trailing" secondItem="ftP-Dt-n6x" secondAttribute="trailing" constant="16" id="lhS-Th-tb2"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cellView" destination="ftP-Dt-n6x" id="70P-b7-TjH"/>
                 <outlet property="dateLabel" destination="vgv-Po-yr9" id="jrj-vS-oVe"/>
             </connections>
             <point key="canvasLocation" x="288.40579710144931" y="123.54910714285714"/>
