@@ -22,12 +22,18 @@ class PaymentCell: UITableViewCell {
     private func initCellView() {
         cellView.layer.borderWidth = 1
         cellView.layer.borderColor = UIColor.lightGray.cgColor
-        
-//        cellView.layer.shadowColor = UIColor.red.cgColor
-//        cellView.layer.shadowOpacity = 0.5
-//        cellView.layer.shadowOffset = .zero
-//        cellView.layer.shadowRadius = 20
-        
+
+        // add shadow on cell
+        backgroundColor = .clear // very important
+        layer.masksToBounds = false
+        layer.shadowOpacity = 0.23
+        layer.shadowRadius = 4
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowColor = UIColor.black.cgColor
+
+        // add corner radius on `contentView`
+        cellView.backgroundColor = .white
+        cellView.layer.cornerRadius = 8
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

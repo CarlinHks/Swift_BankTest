@@ -32,6 +32,10 @@ class LoginViewController: UIViewController {
         initViewModel()
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        loginButtonTapped(loginButton!)
+//    }
+    
     private func initElements() {
         usernameTextField.layer.borderColor = UIColor.red.cgColor
         passwordTextField.layer.borderColor = UIColor.red.cgColor

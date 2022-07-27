@@ -100,4 +100,16 @@ extension PaymentsViewController: UITableViewDelegate {
         // cell + top + bottom
         return 80+10+10
     }
+    
+    // Example
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return UISwipeActionsConfiguration(actions: [.init(style: .destructive, title: "Remover", handler: { _, _, _ in
+        })])
+    }
+    
+    // Example
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return UISwipeActionsConfiguration(actions: [.init(style: .normal, title: "Update", handler: { _, _, _ in
+        })])
+    }
 }
