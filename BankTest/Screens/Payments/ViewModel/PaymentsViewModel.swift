@@ -8,8 +8,8 @@
 import Foundation
 
 class PaymentsViewModel {
-    private var coordinator: Coordinator
-    private let externalService = ExternalService()
+    private let coordinator: Coordinator
+    private let externalService: ExternalService
     
     var customer: CustomerModel
     
@@ -17,9 +17,10 @@ class PaymentsViewModel {
     var isBusy: Observable<Bool> = Observable(true)
     var errorMessage: Observable<String> = Observable("")
     
-    init(_ coordinator: Coordinator, _ customer: CustomerModel) {
+    init(coordinator: Coordinator, customer: CustomerModel, externalService: ExternalService) {
         self.coordinator = coordinator
         self.customer = customer
+        self.externalService = externalService
     }
     
     func loadPayments(userId: String) {

@@ -35,6 +35,8 @@
 		D7E61F2D287E83AB00BDCF12 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E61F2C287E83AB00BDCF12 /* Observable.swift */; };
 		D7FB9BCA287FEAC600147C1F /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB9BC9287FEAC600147C1F /* PaymentModel.swift */; };
 		D7FB9BCC287FEB8B00147C1F /* PaymentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB9BCB287FEB8B00147C1F /* PaymentsViewModel.swift */; };
+		D7FD0A6B2895ACC0007E7E21 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD0A6A2895ACC0007E7E21 /* LoginViewModelTests.swift */; };
+		D7FD0A6D2895ACDC007E7E21 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD0A6C2895ACDC007E7E21 /* LoginViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		D7E61F2C287E83AB00BDCF12 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		D7FB9BC9287FEAC600147C1F /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		D7FB9BCB287FEB8B00147C1F /* PaymentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewModel.swift; sourceTree = "<group>"; };
+		D7FD0A6A2895ACC0007E7E21 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		D7FD0A6C2895ACDC007E7E21 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +274,7 @@
 		D7CE5F782877E29E00FA66AD /* BankTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				D7FD0A682895AC36007E7E21 /* Screens */,
 				D7CE5F792877E29E00FA66AD /* BankTestTests.swift */,
 			);
 			path = BankTestTests;
@@ -347,6 +352,23 @@
 				D7502EBD28811EF50070D972 /* ViewModel */,
 			);
 			path = Payments;
+			sourceTree = "<group>";
+		};
+		D7FD0A682895AC36007E7E21 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D7FD0A692895AC41007E7E21 /* Login */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D7FD0A692895AC41007E7E21 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D7FD0A6A2895ACC0007E7E21 /* LoginViewModelTests.swift */,
+				D7FD0A6C2895ACDC007E7E21 /* LoginViewControllerTests.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,6 +593,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7FD0A6D2895ACDC007E7E21 /* LoginViewControllerTests.swift in Sources */,
+				D7FD0A6B2895ACC0007E7E21 /* LoginViewModelTests.swift in Sources */,
 				D7CE5F7A2877E29E00FA66AD /* BankTestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

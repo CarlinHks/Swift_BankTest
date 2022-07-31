@@ -14,7 +14,6 @@ class PaymentsViewController: UIViewController {
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var waitingIndicatorView: UIActivityIndicatorView!
-    
     @IBOutlet weak var paymentsTableView: UITableView!
     
     init(_ viewModel: PaymentsViewModel) {
@@ -76,8 +75,21 @@ extension PaymentsViewController: UITableViewDataSource {
         paymentsTableView.register(PaymentCell.self)
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Recentes" // TODO viewForHeaderInSection
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Recentes" // TODO viewForHeaderInSection
+//    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        let view = UITableViewCell(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        
+        let label = UILabel(frame: CGRect(x: 16, y: 0, width: 100, height: 20))
+        
+        label.text = "Recentes"
+        
+        view.addSubview(label)
+        
+        return view
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,7 +109,7 @@ extension PaymentsViewController: UITableViewDataSource {
 // MARK: TableView Delegate
 extension PaymentsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        // cell + top + bottom
+        // cell.hight + top + bottom
         return 80+10+10
     }
     

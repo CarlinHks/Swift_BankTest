@@ -8,9 +8,8 @@
 import Foundation
 
 class LoginViewModel {
-    private var coordinator: Coordinator
-    
-    private let externalService = ExternalService()
+    private let coordinator: Coordinator
+    private let externalService: ExternalService
     
     var customer: Observable<CustomerModel> = Observable(nil)
     var isBusy: Observable<Bool> = Observable(false)
@@ -18,8 +17,9 @@ class LoginViewModel {
     var isValidPassword: Observable<Bool> = Observable(true)
     var errorMessage: Observable<String> = Observable("")
     
-    init(_ coordinator: Coordinator) {
+    init(coordinator: Coordinator, externalService: ExternalService) {
         self.coordinator = coordinator
+        self.externalService = externalService
     }
     
     func navigateToPaymentsScreen() {
