@@ -53,12 +53,6 @@ class LoginViewController: UIViewController {
 // swiftlint: disable cyclomatic_complexity
 extension LoginViewController {
     private func initViewModel() {
-        loginViewModel.customer.bind {[weak self] _ in
-            guard let self = self else { return }
-            
-            self.loginViewModel.navigateToPaymentsScreen()
-        }
-        
         loginViewModel.isBusy.bind {[weak self] _ in
             guard let self = self else { return }
             

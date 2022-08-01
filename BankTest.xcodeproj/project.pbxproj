@@ -21,7 +21,6 @@
 		D7CE5F652877E29A00FA66AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F642877E29A00FA66AD /* SceneDelegate.swift */; };
 		D7CE5F6C2877E29E00FA66AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7CE5F6B2877E29E00FA66AD /* Assets.xcassets */; };
 		D7CE5F6F2877E29E00FA66AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7CE5F6D2877E29E00FA66AD /* LaunchScreen.storyboard */; };
-		D7CE5F7A2877E29E00FA66AD /* BankTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F792877E29E00FA66AD /* BankTestTests.swift */; };
 		D7CE5F842877E29E00FA66AD /* BankTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F832877E29E00FA66AD /* BankTestUITests.swift */; };
 		D7CE5F862877E29E00FA66AD /* BankTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F852877E29E00FA66AD /* BankTestUITestsLaunchTests.swift */; };
 		D7CE5F9A2877EB5100FA66AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE5F982877EB5100FA66AD /* LoginViewController.swift */; };
@@ -36,7 +35,6 @@
 		D7FB9BCA287FEAC600147C1F /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB9BC9287FEAC600147C1F /* PaymentModel.swift */; };
 		D7FB9BCC287FEB8B00147C1F /* PaymentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB9BCB287FEB8B00147C1F /* PaymentsViewModel.swift */; };
 		D7FD0A6B2895ACC0007E7E21 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD0A6A2895ACC0007E7E21 /* LoginViewModelTests.swift */; };
-		D7FD0A6D2895ACDC007E7E21 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD0A6C2895ACDC007E7E21 /* LoginViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +74,6 @@
 		D7CE5F6E2877E29E00FA66AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7CE5F702877E29E00FA66AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7CE5F752877E29E00FA66AD /* BankTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7CE5F792877E29E00FA66AD /* BankTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTestTests.swift; sourceTree = "<group>"; };
 		D7CE5F7F2877E29E00FA66AD /* BankTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CE5F832877E29E00FA66AD /* BankTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTestUITests.swift; sourceTree = "<group>"; };
 		D7CE5F852877E29E00FA66AD /* BankTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -92,7 +89,6 @@
 		D7FB9BC9287FEAC600147C1F /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		D7FB9BCB287FEB8B00147C1F /* PaymentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewModel.swift; sourceTree = "<group>"; };
 		D7FD0A6A2895ACC0007E7E21 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
-		D7FD0A6C2895ACDC007E7E21 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,7 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				D7FD0A682895AC36007E7E21 /* Screens */,
-				D7CE5F792877E29E00FA66AD /* BankTestTests.swift */,
 			);
 			path = BankTestTests;
 			sourceTree = "<group>";
@@ -366,7 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				D7FD0A6A2895ACC0007E7E21 /* LoginViewModelTests.swift */,
-				D7FD0A6C2895ACDC007E7E21 /* LoginViewControllerTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -593,9 +587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7FD0A6D2895ACDC007E7E21 /* LoginViewControllerTests.swift in Sources */,
 				D7FD0A6B2895ACC0007E7E21 /* LoginViewModelTests.swift in Sources */,
-				D7CE5F7A2877E29E00FA66AD /* BankTestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

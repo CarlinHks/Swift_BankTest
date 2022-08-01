@@ -11,7 +11,6 @@ class LoginViewModel {
     private let coordinator: Coordinator
     private let externalService: ExternalService
     
-    var customer: Observable<CustomerModel> = Observable(nil)
     var isBusy: Observable<Bool> = Observable(false)
     var isValidUsername: Observable<Bool> = Observable(true)
     var isValidPassword: Observable<Bool> = Observable(true)
@@ -20,12 +19,6 @@ class LoginViewModel {
     init(coordinator: Coordinator, externalService: ExternalService) {
         self.coordinator = coordinator
         self.externalService = externalService
-    }
-    
-    func navigateToPaymentsScreen() {
-        if let customer = self.customer.value {
-            coordinator.eventOccurred(with: .loginButtonTapped(customer: customer))
-        }
     }
     
     func authenticate(username: String, password: String) {
@@ -45,8 +38,8 @@ class LoginViewModel {
             
             switch result {
             case .success(let customer):
-                self.customer.value = customer
                 self.isBusy.value = false
+                self.coordinator.eventOccurred(with: .loginButtonTapped(customer: customer))
 
             case .failure(let error):
                 self.errorMessage.value = error.getErrorMessage()
