@@ -41,7 +41,6 @@ class LoginViewModelTests: XCTestCase {
     // MARK: ExternalServiceSpy
     class ExternalServiceSpy: ExternalService {
         var didLogin = false
-        var didPayments = false
         
         var returnSuccess = false
         
@@ -57,11 +56,6 @@ class LoginViewModelTests: XCTestCase {
                 completion(.failure(.decodeError))
             }
         }
-        
-        override func loadPayments(userId: String,
-                                   completion: @escaping (Result<[PaymentModel], NetworkErrors>) -> Void) {
-            didPayments = true
-        }
     }
     
     // MARK: Tests
@@ -75,7 +69,6 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.isBusy.value, false)
         
         XCTAssertEqual(externalService.didLogin, true)
-        XCTAssertEqual(externalService.didPayments, false)
         
         switch coordinator.event {
         case .loginButtonTapped(customer: _):
@@ -83,6 +76,7 @@ class LoginViewModelTests: XCTestCase {
         default:
             XCTFail("Invalid event")
         }
+//        XCTAssertEqual(coordinator.event, .loginButtonTapped(customer: _))
     }
     
     func testAuthenticateFailDecode() {
@@ -93,7 +87,6 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.isBusy.value, false)
         
         XCTAssertEqual(externalService.didLogin, true)
-        XCTAssertEqual(externalService.didPayments, false)
         
         switch coordinator.event {
         case .none:
@@ -111,7 +104,6 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.isBusy.value, false)
         
         XCTAssertEqual(externalService.didLogin, false)
-        XCTAssertEqual(externalService.didPayments, false)
     }
     
     func testAuthenticateFail_invalidPassword() {
@@ -122,6 +114,5 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.isBusy.value, false)
         
         XCTAssertEqual(externalService.didLogin, false)
-        XCTAssertEqual(externalService.didPayments, false)
     }
 }

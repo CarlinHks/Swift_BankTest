@@ -12,6 +12,7 @@
 		D74D8C16287A9E66006AB434 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D74D8C14287A9E66006AB434 /* Logo.png */; };
 		D7502EB92881040B0070D972 /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7502EB72881040B0070D972 /* PaymentCell.swift */; };
 		D7502EBA2881040B0070D972 /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7502EB82881040B0070D972 /* PaymentCell.xib */; };
+		D7B38AEF2898910B00B8B864 /* PaymentsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B38AEE2898910B00B8B864 /* PaymentsViewModelTests.swift */; };
 		D7BEDCF428890610008A35A2 /* ExternalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEDCF328890610008A35A2 /* ExternalService.swift */; };
 		D7BEDCF6288907DA008A35A2 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEDCF5288907DA008A35A2 /* UIViewController+extensions.swift */; };
 		D7BEDCFA288A5F47008A35A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEDCF9288A5F47008A35A2 /* Coordinator.swift */; };
@@ -62,6 +63,7 @@
 		D74D8C14287A9E66006AB434 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		D7502EB72881040B0070D972 /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
 		D7502EB82881040B0070D972 /* PaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
+		D7B38AEE2898910B00B8B864 /* PaymentsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewModelTests.swift; sourceTree = "<group>"; };
 		D7BEDCF328890610008A35A2 /* ExternalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalService.swift; sourceTree = "<group>"; };
 		D7BEDCF5288907DA008A35A2 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		D7BEDCF9288A5F47008A35A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -192,6 +194,14 @@
 				D7E61F24287E053A00BDCF12 /* CustomerModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D7B38AED289890C400B8B864 /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				D7B38AEE2898910B00B8B864 /* PaymentsViewModelTests.swift */,
+			);
+			path = Payments;
 			sourceTree = "<group>";
 		};
 		D7BEDCF2288905CA008A35A2 /* External */ = {
@@ -352,6 +362,7 @@
 		D7FD0A682895AC36007E7E21 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D7B38AED289890C400B8B864 /* Payments */,
 				D7FD0A692895AC41007E7E21 /* Login */,
 			);
 			path = Screens;
@@ -588,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7FD0A6B2895ACC0007E7E21 /* LoginViewModelTests.swift in Sources */,
+				D7B38AEF2898910B00B8B864 /* PaymentsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
